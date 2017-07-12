@@ -1,0 +1,78 @@
+/* Welcome to Compass. Use this file to write IE specific override styles.
+ * Import this file using the following HTML or equivalent:
+ * <!--[if IE]>
+ *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+ * <![endif]--> */
+.tools__item {
+  position: relative;
+  display: inline-block;
+
+  &+.tools__item {
+    position: absolute;
+    left: -4px;
+    top: 0;
+    content: '|';
+    font-size: 13px;
+    font-size: 0.8125rem;
+  }
+
+  &share {}
+}
+
+.search {
+  cursor: pointer;
+
+  .icon-font {
+    @include rem(17);
+    color: $gray;
+
+    &:before {
+      margin-right: 2px;
+    }
+  }
+
+  &__box {
+    width: 38px;
+    height: 26px;
+    padding: 0;
+    color: $black;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid transparent;
+    background: transparent;
+    cursor: pointer;
+    @include transition(width .35s $smooth);
+    @include placeholder {
+      color: $gray;
+    }
+
+    &:focus {
+      width: 180px;
+      margin-right: 5px;
+      border-bottom-color: $gray;
+      cursor: default;
+      outline: 0;
+    }
+
+    .lang-sc &,
+    .lang-tc & {
+      @include rem(16);
+    }
+  }
+}
+
+.search__box {
+  width: 38px;
+  height: 26px;
+  padding: 0;
+  color: #000;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  -moz-transition: width 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: width 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transition: width 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: width 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
