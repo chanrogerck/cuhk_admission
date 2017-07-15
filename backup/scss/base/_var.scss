@@ -1,0 +1,47 @@
+$screen-xl-min: 1600px;
+$screen-xl-max: ($screen-xl-min - 1);
+$ltIphone6plus: 414px;
+$ltIphone5: 320px;
+
+// $langList: 'en', 'tc', 'sc';
+//
+// $piePath: '/assets/css/polyfill/PIE.htc';
+// $backgroundsizePath: '/assets/css/polyfill/backgroundsize.min.htc';
+
+$smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$easeBounce: cubic-bezier(0.17, 0.67, 0.48, 1.28);
+$easeOutSine: cubic-bezier(.39,.57,.56, 1);
+$easeInSine: cubic-bezier(.73,.26,.92,.65);
+$easeOutSwift: cubic-bezier(.55,0,.1,1);
+
+
+/* Colors Set
+=======================================*/
+$white: #ffffff;
+$gray: #4c4c4c;
+$darkgray: #333;
+$lightgray: #8f8f8f;
+$black: #000;
+$blue: #182a66;
+$blue2: #0e1f54;
+$darkblue: #294179;
+$lightblue: #acb3c9;
+$lightblue2: #66719f;
+$green: #4ebd88;
+$palepurple: #964c98;
+$purple: #833b84;
+
+
+/* GUI Colors
+=======================================*/
+/* Table Color */
+$tableHighlightCol: #c8cee4;
+$tableHighlightRow: #c8cee4;
+$tableThText: $white;
+$tableThBg: #294179;
+$tableText: #00044e;
+$tableBorder: #d9deec;
+
+
+/* BreakPoints
+=======================================*/

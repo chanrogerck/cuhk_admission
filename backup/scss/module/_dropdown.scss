@@ -1,0 +1,109 @@
+.dropdown {
+  position: relative;
+
+  &__btn {
+    width: 100%;
+    padding: 8px 16px 8px 20px;
+    @include fontDB();
+    @include rem(14);
+    color: #666;
+    text-align: left;
+    text-transform: uppercase;
+    border: 0;
+    background: #e2e2e2;
+
+    &[aria-expanded="true"] {
+      .icon-font--down {
+        @include transform(rotate(180deg));
+      }
+    }
+
+    .icon-font--down {
+      float: right;
+      color: #959595;
+      line-height: 1;
+      @include transition(transform .3s ease);
+
+      &:before {
+        margin-right: 0;
+        @include rem(18);
+      }
+    }
+
+    &:hover,
+    &:focus {
+      color: $gray;
+    }
+  }
+
+  &__menu,
+  &-menu {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 100;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #e2e2e2;
+    border-top: 0;
+    background-color: $white;
+    @include box-shadow(1px 1px 2px 0px rgba(0,0,0,0.2));
+    @include transition(all .2s);
+
+    .open & {
+      visibility: visible!important;
+      opacity: 1!important;
+    }
+
+    &-link {
+      display: block;
+      padding: 8px 16px;
+      color: #000;
+      @include fontDB();
+      @include rem(14);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: $white;
+        background-color: #c9c7c7;
+      }
+    }
+  }
+
+  &--year {
+    float: right;
+    width: 165px;
+  }
+}
+
+
+/* Tablet */
+@media screen and (max-width: $screen-sm-max) {
+  .dropdown {
+    &__btn {
+      padding: 8px 10px 6px 14px;
+      @include rem(13);
+    }
+  }
+}
+
+
+/* Mobile */
+@media screen and (max-width: $screen-xs-max) {
+  .dropdown {
+    &__btn {
+      .icon-font--down:before {
+        @include rem(16);
+      }
+    }
+
+    &--year {
+      width: 140px;
+    }
+  }
+}

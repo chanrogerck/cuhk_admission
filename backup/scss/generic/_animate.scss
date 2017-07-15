@@ -1,0 +1,267 @@
+// Bubble
+.bubble {
+  position: relative;
+  display: inline-block;
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: rgba(255,255,255,.06);
+    @include transform(scale(0, 0));
+    @include transition(transform .25s);
+  }
+
+  &:hover,
+  &:focus {
+    &:after {
+      @include transform(scale(1, 1));
+    }
+  }
+}
+
+
+// Circle
+.circle {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+
+  &:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    content: '';
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,.1);
+    border-radius: 100%;
+    opacity: 0;
+    @include transform(translate(-50%, -50%));
+  }
+
+  &:hover,
+  &:focus {
+    &:after {
+      @include animation(circle .7s);
+    }
+  }
+}
+
+@-webkit-keyframes circle {
+	0% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 1;
+	}
+	100% {
+		width: 200%;
+		height: 200%;
+		opacity: 0;
+	}
+}
+
+@keyframes circle {
+	0% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 1;
+	}
+	100% {
+		width: 200%;
+		height: 200%;
+		opacity: 0;
+	}
+}
+
+// Hinge up
+.hinge-up {
+	@include perspective(1000px);
+  @include backface-visibility(hidden);
+
+	> figure {
+    @include transition(all 0.35s ease);
+		@include transform-origin(50%, 0%, false);
+    will-change: transform;
+	}
+
+	> div {
+    opacity: 0;
+		z-index: 1;
+    @include transition(all 0.35s ease);
+		@include transform(rotateX(90deg));
+		@include transform-origin(50%, 100%, false);
+    will-change: transform;
+	}
+
+	&:hover,
+  &:focus {
+		figure {
+      opacity: 0;
+			//@include transform(rotateX(-90deg));
+      @include transform(rotate3d(1,0,0,-90deg));
+		}
+
+		> div {
+      opacity: 1;
+			@include transition-delay(.21s);
+			//@include transform(rotateX(0));
+      @include transform(rotate3d(1,0,0,0));
+		}
+	}
+}
+
+// Hinge down
+.hinge-down {
+	@include perspective(1000px);
+  @include backface-visibility(hidden);
+  @include transition(all 0.35s ease);
+
+	> div {
+    opacity: 0;
+		//@include transform(rotateX(90deg));
+    @include transform(rotate3d(1,0,0,90deg));
+		@include transform-origin(50%, 0%, false);
+    @include transition(all 0.35s ease);
+    will-change: transform;
+	}
+
+	//&:hover,
+  //&:focus,
+  &.is-active {
+    z-index: 100;
+    background-color: #99cfb3!important;
+
+    .switch__head {
+      border-bottom-color: #99cfb3!important;
+    }
+
+    .icon-font {
+      color: $white;
+      background-color: #6dba93;
+
+      &:before {
+        //@include transform(rotate(180deg));
+        content: '\e80f';
+      }
+    }
+
+		> div {
+      opacity: 1;
+			//@include transform(rotateX(0));
+      @include transform(rotate3d(1,0,0,0));
+      @include transition-delay(.21s);
+		}
+	}
+}
+
+// Hinge left
+.hinge-left {
+	@include perspective(1000px);
+  @include backface-visibility(hidden);
+
+	> div {
+    opacity: 0;
+		//@include transform(rotateY(-90deg));
+    @include transform(rotate3d(0,1,0,-90deg));
+		@include transform-origin(0%, 0%, false);
+    @include transition(all 0.45s ease);
+    @include transition-delay(.2s);
+    will-change: transform;
+	}
+
+	&:hover,
+  &:focus {
+		> div {
+      opacity: 1;
+			@include transform(rotate3d(0,1,0,0));
+		}
+	}
+}
+
+// Passing
+@-webkit-keyframes passing {
+  0% {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+
+  50% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+    opacity: 0;
+  }
+}
+
+@keyframes passing {
+  0% {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+
+  50% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+    opacity: 0;
+  }
+}
+
+.passing {
+  -webkit-animation-name: passing;
+  animation-name: passing;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+// localshine
+@-webkit-keyframes localShine {
+  from {
+    box-shadow: 0 0 0 0 hsla(0, 0%, 100%, .2)
+  }
+
+  to {
+    box-shadow: 0 0 0 15px hsla(0, 0%, 100%, 0)
+  }
+}
+
+@keyframes localShine {
+  from {
+    box-shadow: 0 0 0 0 hsla(0, 0%, 100%, .2)
+  }
+
+  to {
+    box-shadow: 0 0 0 15px hsla(0, 0%, 100%, 0)
+  }
+}
+
+.localShine {
+  -webkit-animation: localShine 2s linear infinite;
+  animation: localShine 2s linear infinite;
+}
+
+// float shadow
+.ie {
+  .hvr-float-shadow {
+    @include transition(none);
+  }
+}

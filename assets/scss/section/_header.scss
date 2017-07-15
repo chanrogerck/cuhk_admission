@@ -1,0 +1,186 @@
+.page-head {
+	z-index: 10000;
+    @include gradient-vertical($start-color: #000, $end-color: transparent, $start-percent: 0%, $end-percent: 100%);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    padding: 15px 0;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.page-logo {
+  float: left;
+  margin-top: 20px;
+}
+
+.navigate {
+  float: right;
+  margin-top: 18px;
+  padding: 0;
+  @include rem(18);
+  text-align: right;
+
+  .tools__item {
+    display: inline-block;
+    margin-left: 10px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.hku-home {
+  .lang-tc &,
+  .lang-sc & {
+    @include rem(16);
+  }
+}
+
+.lang {
+  @include rem(16);
+
+  &__item {
+    @include inline_block();
+
+    &:last-child:before {
+      position: relative;
+      top: -1px;
+      margin-left: 5px;
+      margin-right: 6px;
+      content: '|';
+    }
+  }
+}
+
+.search {
+  cursor: pointer;
+
+  .icon-font {
+    @include rem(17);
+    color: $gray;
+
+    &:before {
+      margin-right: 2px;
+    }
+  }
+
+  &__box {
+    width: 0;
+    height: 26px;
+    padding: 0;
+    color: #000;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    cursor: pointer;
+    @include transition(width .35s $smooth);
+
+    @include placeholder {
+      color: $white;
+    }
+
+    &:focus {
+      width: 180px;
+      margin-right: 5px;
+      cursor: default;
+      outline: 0;
+    }
+
+    .lang-tc &,
+    .lang-sc & {
+      @include rem(16);
+    }
+  }
+}
+
+.quick-links {
+  display: block;
+  margin-top: 8px;
+  @include rem(20);
+
+  &__item {
+    margin-left: 30px;;
+  }
+}
+
+.head-btm {
+  height: 52px;
+}
+
+
+/* Medium desktop  */
+@media screen and (max-width: $screen-md-max) {
+  .tools {
+    &__item {
+      margin-left: 25px;
+    }
+  }
+
+  .quick-links {
+    &__item {
+      margin-left: 25px
+    }
+  }
+
+  .search__box:focus {
+    width: 130px;
+  }
+
+  .head-btm {
+    height: 48px;
+  }
+}
+
+
+/* Tablet */
+@media screen and (max-width: $screen-sm-max) {
+	.page-head {
+	  @include box-shadow(0px 2px 5px 0px rgba(50, 50, 50, 0.15));
+	}
+
+  .head-top {
+    height: 73px;
+  }
+
+  .page-logo {
+    margin-top: 15px;
+
+    img {
+      width: 258px;
+    }
+
+    &--main {
+      padding-right: 50px;
+      @include rem(30);
+      line-height: 73px;
+      background-size: auto 100%;
+    }
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: $screen-xs-max) {
+  .head-top {
+    height: 46px;
+  }
+
+  .page-logo {
+    margin-top: 12px;
+
+    img {
+      width: 150px;
+    }
+
+    &--main {
+      padding-left: 13px;
+      padding-right: 23px;
+      @include rem(15);
+      line-height: 46px;
+    }
+  }
+}

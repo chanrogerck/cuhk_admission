@@ -1,0 +1,77 @@
+.no-scroll {
+  overflow: hidden;
+
+  body {
+    overflow: hidden;
+    position: relative;
+  }
+}
+
+/* Flexbox */
+.flex {
+  @include display-flex;
+  @include flex-wrap(wrap);
+
+  &__item {
+    //@include flex(1);
+    //width: 0%;
+  }
+
+  .no-flexwrap & {
+    display: block;
+    font-size: 0;
+
+    &__item {
+      @include inline_block();
+      vertical-align: top;
+    }
+  }
+
+  &--center {
+    @include justify-content(center);
+    @include align-items(center);
+  }
+}
+
+/* Full width containers in limited width parents */
+.full-width-blk {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.cover-img {
+  background: no-repeat center center;
+  @include background-size(cover);
+}
+
+/* IE8 */
+/* rotation=1 -> 90 degree */
+.rotate {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+
+/* media_q check by js */
+.query-crt {
+	display: none;
+	position: absolute;
+}
+
+/* Desktop */
+@media (min-width: $screen-md-min) {
+  .query-crt-desktop { display: block; }
+}
+
+/* Tablet */
+@media (min-width: $screen-sm-min) and (max-width: ($screen-sm-max)) {
+  .query-crt-tablet { display: block; }
+}
+
+/* Mobile */
+@media (max-width: $screen-xs-max) {
+	.query-crt-mobile { display: block; }
+}

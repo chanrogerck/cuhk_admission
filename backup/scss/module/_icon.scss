@@ -1,0 +1,76 @@
+.icon-svg {
+  display: inline-block;
+  margin-right: 4px;
+  vertical-align: text-bottom;
+  fill: currentColor;
+
+  &--scholars-hub {
+    width: 16px;
+    height: 16px;
+  }
+
+  &--pubmed-search {
+    width: 20px;
+    height: 20px;
+
+    path {
+      fill: #4ebd88;
+    }
+  }
+
+  &--question {
+    width: 30px;
+    height: 28px;
+  }
+
+  &--venue {
+    width: 11px;
+    height: 15px;
+    margin-right: 2px;
+    vertical-align: inherit;
+  }
+
+  &--zoom {
+    width: 16px;
+    height: 16px;
+    margin-right: 2px;
+  }
+
+  &--expand {
+    width: 13px;
+    height: 22px;
+    margin-right: 4px;
+  }
+
+  &--search {
+    width: 12px;
+    height: 13px;
+    margin-right: 3px;
+    vertical-align: -1px;
+  }
+}
+
+.icon-font {
+
+}
+
+
+/* Tablet */
+@media screen and (max-width: $screen-sm-max) {
+  .icon-svg {
+    &--question {
+      width: 24px;
+      height: 22px;
+    }
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: $screen-xs-max) {
+  .icon-svg {
+    &--expand {
+      width: 11px;
+      height: 19px;
+    }
+  }
+}

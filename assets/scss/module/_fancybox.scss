@@ -1,0 +1,141 @@
+.fancybox-overlay {
+  z-index: 10001;
+}
+
+.fancybox-opened {
+  z-index: 10002;
+}
+
+.fancybox-skin {
+  border-radius: 0;
+  background-color: $white;
+  box-shadow: none!important;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.fancybox-outer {
+  z-index: 10000;
+}
+
+.fancybox-title-inside-wrap {
+  position: relative;
+  padding: 50px 10px 10px 10px;
+  @include rem(15);
+}
+
+// .fancybox-opened .fancybox-title {
+//   min-height: 40px;
+// }
+
+.fancybox-nav {
+  top: 100%;
+  width: auto;
+  height: auto;
+  margin-top: 7px;
+  padding: 5px;
+
+  &:hover,
+  &:focus {
+    opacity: .8;
+  }
+
+  &:before {
+		@include rem(15);
+		color: #c5c5c5;
+		@include fontFE();
+    line-height: 1;
+    font-weight: bold;
+    content: '\e80d';
+  }
+
+  &.fancybox-next:before {
+    content: '\e80e';
+  }
+}
+
+.fancybox-prev {
+  left: calc(50% - 45px);
+}
+
+.fancybox-next {
+  right: calc(50% - 45px);
+}
+
+.fancybox-close {
+  top: 0;
+  right: -39px;
+  width: 32px;
+  height: 32px;
+  line-height: 30px;
+  text-align: center;
+  border: 2px solid $white;
+
+  &:before {
+    @include rem(17);
+    color: $white;
+    @include fontFE();
+    font-weight: bold;
+    line-height: 1;
+    content: '\e810';
+  }
+}
+
+#fancybox-loading div {
+  background: image-url('lib_fancybox/fancybox_loading.gif') center center no-repeat;
+  background-size: 24px auto;
+}
+
+// hide the flash object in android browser
+.fancybox-outer {
+  text-align: center;
+
+  object {
+    display: none;
+  }
+}
+
+.slide-no {
+  @include center_translate(x);
+  top: 12px;
+  @include rem(14);
+
+  em {
+    padding: 0 2px;
+    font-style: normal;
+  }
+}
+
+
+/* Tablet */
+@media screen and (max-width: $screen-sm-max) {
+  .fancybox-close {
+    top: -35px;
+    right: 0px;
+  }
+}
+
+
+/* Mobile */
+@media screen and (max-width: $screen-xs-max) {
+  .fancybox-skin {
+    padding: 8px!important;
+  }
+
+  .fancybox-close {
+    top: -28px;
+    width: 25px;
+    height: 25px;
+    line-height: 22px;
+
+    &:before {
+      @include rem(12);
+    }
+  }
+
+  .fancybox-title-inside-wrap {
+    padding: 40px 3px 0 3px;
+  }
+}

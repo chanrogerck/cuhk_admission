@@ -1,0 +1,204 @@
+.page-head {
+	position: relative;
+	z-index: 10000;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.head-top {
+  height: 91px;
+  overflow: hidden;
+  background-color: $white;
+}
+
+.page-logo {
+  float: left;
+  margin-top: 20px;
+
+  &--main {
+    padding-left: percentage(86/1540);
+    margin-top: 0!important;
+    padding-right: 68px;
+    @include rem(35);
+    @include fontYB();
+    color: $gray!important;
+    line-height: 91px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: image-url('bg_logo.png') no-repeat right center;
+  }
+}
+
+.tools {
+  float: right;
+  margin-top: 18px;
+  padding: 0;
+  @include rem(18);
+  @include fontYR();
+  text-align: right;
+
+  &__item {
+    display: inline-block;
+    margin-left: 40px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.hku-home {
+  .lang-tc &,
+  .lang-sc & {
+    @include rem(16);
+  }
+}
+
+.lang {
+  @include rem(16);
+
+  &__item {
+    @include inline_block();
+
+    &:last-child:before {
+      position: relative;
+      top: -1px;
+      margin-left: 5px;
+      margin-right: 6px;
+      content: '|';
+    }
+  }
+}
+
+.search {
+  cursor: pointer;
+
+  .icon-font {
+    @include rem(17);
+    color: $gray;
+
+    &:before {
+      margin-right: 2px;
+    }
+  }
+
+  &__box {
+    width: 38px;
+    height: 26px;
+    padding: 0;
+    color: #000;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid transparent;
+    background: transparent;
+    cursor: pointer;
+    @include transition(width .35s $smooth);
+
+    @include placeholder {
+      color: $gray;
+    }
+
+    &:focus {
+      width: 180px;
+      margin-right: 5px;
+      border-bottom-color: $gray;
+      cursor: default;
+      outline: 0;
+    }
+
+    .lang-tc &,
+    .lang-sc & {
+      @include rem(16);
+    }
+  }
+}
+
+.quick-links {
+  display: block;
+  margin-top: 8px;
+  @include rem(20);
+
+  &__item {
+    margin-left: 30px;;
+  }
+}
+
+.head-btm {
+  height: 52px;
+  background: inline-image('inline/bg_menu.png') repeat-x 0 0 $white;
+}
+
+
+/* Medium desktop  */
+@media screen and (max-width: $screen-md-max) {
+  .tools {
+    &__item {
+      margin-left: 25px;
+    }
+  }
+
+  .quick-links {
+    &__item {
+      margin-left: 25px
+    }
+  }
+
+  .search__box:focus {
+    width: 130px;
+  }
+
+  .head-btm {
+    height: 48px;
+  }
+}
+
+
+/* Tablet */
+@media screen and (max-width: $screen-sm-max) {
+	.page-head {
+	  @include box-shadow(0px 2px 5px 0px rgba(50, 50, 50, 0.15));
+	}
+
+  .head-top {
+    height: 73px;
+  }
+
+  .page-logo {
+    margin-top: 15px;
+
+    img {
+      width: 258px;
+    }
+
+    &--main {
+      padding-right: 50px;
+      @include rem(30);
+      line-height: 73px;
+      background-size: auto 100%;
+    }
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: $screen-xs-max) {
+  .head-top {
+    height: 46px;
+  }
+
+  .page-logo {
+    margin-top: 12px;
+
+    img {
+      width: 150px;
+    }
+
+    &--main {
+      padding-left: 13px;
+      padding-right: 23px;
+      @include rem(15);
+      line-height: 46px;
+    }
+  }
+}

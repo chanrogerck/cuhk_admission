@@ -1,0 +1,68 @@
+.pagination {
+  margin: 0 15px 0 0;
+  text-align: right;
+
+  > li {
+    > a,
+    > span {
+			padding: 5px 14px;
+			color: #000;
+			@include rem(14);
+			//border: 0;
+			background: none;
+    }
+
+		&.ellipsis span {
+      padding: 0 2px;
+    }
+
+		&.prev-page a,
+		&.next-page a {
+		  padding: 0;
+			width: 5px;
+			height: 20px;
+	  }
+  }
+
+  > li > a,
+  > li > span {
+    &:hover,
+    &:focus {
+      color: $lightblue;
+      background: none;
+    }
+  }
+
+  > .active > a,
+  > .active > span {
+    &,
+    &:hover,
+    &:focus {
+      color: $gray;
+      background: none;
+      cursor: default;
+    }
+  }
+
+  > .disabled {
+    > span,
+    > span:hover,
+    > span:focus,
+    > a,
+    > a:hover,
+    > a:focus {
+      background: none;
+    }
+  }
+}
+
+
+/* Tablet */
+@media screen and (max-width: $screen-sm-max) {
+
+}
+
+/* Mobile */
+@media screen and (max-width: $screen-xs-max) {
+
+}

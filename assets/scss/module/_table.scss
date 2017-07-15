@@ -1,0 +1,175 @@
+/* Table */
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 2rem;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  th, td {
+    padding: 10px 12px;
+    vertical-align: top;
+  }
+
+  th {
+    @include fontYR();
+    @include rem(23);
+    font-weight: normal;
+  }
+}
+
+[border="1"] {
+  th, td {
+    border: 1px solid #dee0e6;
+  }
+}
+
+table[border="0"] {
+  th, td {
+    border: 0;
+  }
+}
+
+
+/* Custom Table */
+.table {
+  margin-bottom: 30px;
+  border: 2px solid #dee0e6;
+  background-color: #f9f9f9;
+
+  // Cells
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: 10px 15px;
+        border-top: 0;
+      }
+    }
+  }
+  // Bottom align for column headings
+  > thead > tr > th {
+		padding: 13px 0;
+    color: $white;
+		font-weight: normal;
+    border-bottom: 5px solid #910f14;
+		background-color: #d22b32;
+  }
+  // Remove top border from thead by default
+  > caption + thead,
+  > colgroup + thead,
+  > thead:first-child {
+    > tr:first-child {
+      > th,
+      > td {
+        border-top: 0;
+      }
+    }
+  }
+
+  th, td {
+    border: 2px solid #dee0e6;
+    border-top: 0;
+    border-bottom: 0;
+  }
+
+  th {
+    line-height: 1.2!important;
+    border-right-color: #e8e9ee;
+    background-color: #dee0e6;
+
+    &:last-child {
+      border-right-color: #dee0e6;
+    }
+  }
+}
+
+.table-bordered {
+  border: 1px solid $table-border-color;
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border: 1px solid $table-border-color;
+      }
+    }
+  }
+  > thead > tr {
+    > th,
+    > td {
+      border-bottom-width: 2px;
+    }
+  }
+}
+
+.table-striped {
+  > tbody > tr:nth-of-type(odd) {
+    background-color: #f0f0f0;
+  }
+}
+
+.table-hover {
+  > tbody > tr:hover {
+    background-color: #f9f2cf;
+		cursor: pointer;
+  }
+}
+
+.shadow-table {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  width: 80px;
+  height: 100%;
+  background: inline-image('inline/bg_table-shadow.png') repeat-y 0 0;
+
+  em {
+    position: absolute;
+    top: 35px;
+    left: 40px;
+    z-index: 1;
+    display: block;
+    width: 23px;
+    height: 24px;
+    background: inline-image('inline/icon_slide-right.png') no-repeat 0 0;
+    @include background-size(20px auto);
+  }
+}
+
+.table-responsive {
+  position: relative;
+}
+
+
+/* Tablet */
+@media screen and (max-width: $screen-sm-max) {
+
+}
+
+/* Mobile */
+@media screen and (max-width: $screen-xs-max) {
+  table {
+    th, td {
+      padding: 5px!important;
+    }
+
+    th {
+      @include rem(18);
+    }
+  }
+
+  .table-responsive {
+    border: 0;
+    -webkit-overflow-scrolling: touch;
+
+    .table-bordered {
+      border: 1px solid $table-border-color;
+    }
+  }
+}

@@ -1,0 +1,377 @@
+.btn {
+  padding: 8px 12px;
+	color: $white;
+	@include rem(14);
+	text-decoration: none!important;
+	background: none;
+  border-radius: 0;
+
+	&:hover,
+	&:focus {
+    color: inherit;
+    outline: 0!important;
+  }
+
+	&:active,
+	&.active {
+    @include box-shadow(none);
+  }
+
+  &--more {
+    position: relative;
+    @include rem(15);
+    @include fontYR();
+    color: $white;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $green;
+    }
+
+    &:after {
+      display: inline-block;
+      margin-left: 7px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 8px 0 0 9px;
+      border-color: transparent transparent transparent #3a877b;
+      content: '';
+    }
+  }
+
+  &--more-ppl {
+    display: none;
+    margin-top: 8px;
+    color: #4c4c4c;
+
+    &:after {
+      border-color: transparent transparent transparent #95d7b8;
+    }
+  }
+
+  &--more-event {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: $gray;
+    @include rem(14);
+
+    &:after {
+      margin-left: 6px;
+      border-color: transparent transparent transparent #95d7b8;
+    }
+  }
+
+  &--scholars-hub {
+    position: absolute;
+    right: percentage(54/862);
+    bottom: 27px;
+    text-transform: uppercase;
+	  border: 2px solid #a3aac2;
+  }
+
+  &--back {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: percentage(615/862);
+    @include rem(15);
+    @include fontYR();
+    color: $gray;
+    text-transform: uppercase;
+    text-align: right;
+    text-decoration: none;
+
+    span {
+      display: inline-block;
+      padding-right: percentage(28/615);
+      padding-bottom: percentage(10/615);
+
+      &:before {
+        display: inline-block;
+        margin-right: 7px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 8px 9px;
+        border-color: transparent transparent #d4d4d4 transparent;
+        content: '';
+      }
+    }
+  }
+
+  &--back-event {
+    position: static;
+    float: right;
+    width: 60px;
+    margin-bottom: 16px;
+
+    span {
+      padding-right: 0;
+    }
+  }
+
+  &--applicant {
+    margin-top: 26px;
+    margin-bottom: -30px;
+    padding-top: 8px;
+    padding-bottom: 10px;
+    padding-right: percentage(22/486);
+    @include fontDB();
+    @include rem(18);
+    color: $white!important;
+	  border: 2px solid #52608c;
+    border-radius: 26px;
+    background-color: #1e3680;
+
+    &:first-of-type {
+      margin-left: percentage(-100/486);
+      margin-right: percentage(18/486);
+
+      .lang-tc &,
+      .lang-sc & {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &--zoom {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 2px 7px;
+    @include rem(16);
+    @include fontYR();
+    background-color: #0e1e55;
+  }
+
+  &--toggle-all {
+    position: absolute;
+    top: -66px;
+    right: -66px;
+    padding: 7px 12px 9px;
+    color: $gray;
+    @include fontDB();
+    text-transform: uppercase;
+    border: 2px solid #8fd1b2;
+    @include transition(all .3s);
+
+    &:hover,
+    &:focus {
+      color: #000;
+      border-color: #4ebd88;
+    }
+
+    &.is-expand-all {
+      color: $white;
+      background-color: $blue;
+
+      path {
+        fill: $white;
+        stroke: $white;
+
+        &:nth-child(2) {
+          fill: $blue;
+        }
+      }
+    }
+
+    + .panel {
+      clear: both;
+    }
+  }
+
+  &--rte {
+    display: inline-block;
+    margin-right: 34px;
+    vertical-align: middle;
+    color: $white!important;
+  }
+
+  &--style-1 {
+    padding: 4px 16px 2px!important;
+    @include fontYR();
+    @include rem(16);
+    background-color: $blue;
+    &:before {
+      content: ''!important;
+      top: 100%!important;
+    }
+  }
+
+  &--style-2 {
+    padding: 4px 24px 2px!important;
+    @include fontYR();
+    @include rem(20);
+    background-color: #38487b;
+    &:before {
+      content: ''!important;
+      top: 100%!important;
+    }
+  }
+
+  &--style-3 {
+    padding: 7px 19px 6px!important;
+    @include fontDB();
+    @include rem(14);
+    color: $gray!important;
+    text-transform: uppercase;
+    border: 2px solid #8fd1b2;
+    background-color: $white;
+    &:before {
+      content: ''!important;
+      top: 100%!important;
+    }
+  }
+
+  &--style-4 {
+    padding: 12px 52px 10px!important;
+    @include fontDB();
+    @include rem(18);
+    border: 1px solid #52608c;
+    border-radius: 24px;
+    background-color: #1e3680;
+    &:before {
+      content: ''!important;
+      top: 100%!important;
+    }
+  }
+
+  &--style-5 {
+    margin-top: 10px;
+    padding: 4px 8px 2px!important;
+    @include fontYR();
+    @include rem(16);
+    background-color: $blue;
+    &:before {
+      content: ''!important;
+      top: 100%!important;
+    }
+  }
+
+  &--pubmed-search {
+    @include fontDB();
+    color: $gray!important;
+    border: 2px solid #8fd1b2;
+
+    &:before {
+      content: ''!important;
+      top: 100%!important;
+    }
+  }
+}
+
+/* large desktop  */
+@media screen and (max-width: $screen-xl-max) {
+  .btn {
+    &--applicant {
+      margin-top: 15px;
+      margin-bottom: 30px;
+
+      &:first-of-type {
+        margin: 13px 0 0;
+      }
+    }
+
+    &--toggle-all {
+      top: -50px;
+      right: -15px;
+    }
+
+    &--scholars-hub {
+      bottom: 18px;
+    }
+  }
+}
+
+/* Medium desktop  */
+@media screen and (max-width: $screen-md-max) {
+  .btn {
+    &--scholars-hub {
+      right: 5%;
+      bottom: 12px;
+      @include rem(13);
+    }
+  }
+}
+
+
+/* Tablet */
+@media screen and (max-width: $screen-sm-max) {
+  .btn {
+    &--more {
+      @include rem(12);
+
+      &:after {
+        margin-left: 5px;
+        border-width: 7px 0 0 7px;
+      }
+    }
+
+    &--applicant {
+      @include rem(16);
+    }
+
+    &--toggle-all {
+      top: -60px;
+      right: 0;
+    }
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: $screen-xs-max) {
+  .btn {
+    padding: 8px;
+
+    &--more {
+      @include rem(15);
+
+      &:after {
+        margin-left: 7px;
+        border-width: 9px 0 0 9px;
+      }
+    }
+
+    &--more-ppl {
+      @include rem(14);
+
+      &:after {
+        margin-left: 4px;
+      }
+    }
+
+    &--scholars-hub {
+      position: static;
+      margin-top: 15px;
+      margin-right: 5px;
+      @include rem(12);
+    }
+
+    &--applicant {
+      margin-bottom: 20px;
+      padding-left: 10px;
+      padding-right: 12px;
+      @include rem(15);
+    }
+
+    &--zoom {
+      padding: 2px 5px;
+    }
+
+    &--back {
+      @include rem(14);
+    }
+
+    &--toggle-all {
+      top: -85px;
+      right: 4px;
+      padding: 8px 6px;
+      @include rem(13);
+    }
+  }
+}

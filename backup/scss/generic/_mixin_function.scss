@@ -1,0 +1,336 @@
+/* fix inline block */
+@mixin inline_block() { //@include inline_block();
+	display: inline-block;
+	vertical-align: top;
+	*display: inline;
+	*zoom: 1;
+}
+
+/* hide the text content  http://nicolasgallagher.com/another-css-image-replacement-technique/ */
+@mixin hide_text() { //@include hide_text();
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+}
+
+/* dom opacity */
+@mixin opacity($opacity) { //@include opacity(0.8);
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+/* set background opacity */
+@mixin bg_opacity($color, $opacity, $support-for-ie:true){
+	background-color:rgba($color,$opacity);
+	@if $support-for-ie{
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{ie-hex-str(rgba($color,$opacity))},endColorstr=#{ie-hex-str(rgba($color,$opacity))});
+
+		:root & {
+			filter:none;
+		}
+	}
+}
+
+@mixin vert_middle_outter() {
+	display: table;
+	*display: block;
+}
+
+@mixin vert_middle_inner() {
+	display: table-cell;
+	*display: block;
+	vertical-align: middle;
+	$adj:-2;
+	*clear: expression(
+		style.marginTop = "" + (offsetHeight < parentNode.offsetHeight ? parseInt((parentNode.offsetHeight - offsetHeight) / 2)+ #{$adj} + "px" : #{$adj}),
+		style.clear = "none", 0
+	);
+}
+
+/* Vertically align */
+@mixin center_vertically($pseudo-el: 'before') {
+	position: relative;
+
+	&:#{$pseudo-el} {
+		content: '';
+		position: relative;
+		height: 100%;
+		width: 0;
+	}
+
+	&:#{$pseudo-el},
+	> * {
+		vertical-align: middle;
+		display: inline-block;
+	}
+}
+
+@mixin center_translate($direction: both) {
+	position: absolute;
+	@if $direction == both {
+		top: 50%;
+		left: 50%;
+    @include transform(translateX(-50%) translateY(-50%));
+	}
+	@else if $direction == x {
+		left: 50%;
+    @include transform(translateX(-50%));
+	}
+	@else if $direction == y {
+		top: 50%;
+    @include transform(translateY(-50%));
+	}
+}
+
+@mixin center_flex() {
+  display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* convert font size units - pxem(40px)*/
+@function pxem($px, $context: 16) {
+	@return ($px / $context) * 1em;
+	//@return $px;
+}
+
+@mixin rem($px, $context: 16 ) {
+	font-size: $px + px;
+	font-size: $px / $context * 1rem;
+}
+
+/* fix png issue with ie7&ie8 */
+@mixin ie78_png() { //@include ie78_png();
+	behavior:
+    expression(this.src = this.src ?
+        this.src : this.currentStyle.backgroundImage.split('"')[1],
+        this.style.background = "none",
+    this.style.filter =
+        "progid:DXImageTransform.Microsoft.AlphaImageLoader(src="
+        + this.src + ",sizingMethod='scale')");
+}
+
+/* Style for placeholder */
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}
+
+/* Triangle - @include triangle(12px, 6px, #ff0000, down); */
+@mixin triangle($width, $height, $color, $direction) {
+  $width: $width/2;
+  $color-border-style: $height solid $color;
+  $transparent-border-style: $width solid transparent;
+  height: 0;
+  width: 0;
+  @if $direction == up {
+    border-bottom: $color-border-style;
+    border-left: $transparent-border-style;
+    border-right: $transparent-border-style;
+  } @else if $direction == right {
+    border-left: $color-border-style;
+    border-top: $transparent-border-style;
+    border-bottom: $transparent-border-style;
+  } @else if $direction == down {
+    border-top: $color-border-style;
+    border-left: $transparent-border-style;
+    border-right: $transparent-border-style;
+  } @else if $direction == left {
+    border-right: $color-border-style;
+    border-top: $transparent-border-style;
+    border-bottom: $transparent-border-style;
+  }
+}
+
+/* @include svg_bg(inline/icon-x, 50px); */
+@mixin svg_bg($_img, $bg-width: auto ) {
+  background-image: inline-image('#{$_img}.png'); // IE8 & below
+  background-image: inline-image('#{$_img}.svg'), none;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: $bg-width, auto;
+}
+
+@mixin word_wrap() {
+  -ms-word-break: break-all;
+  word-break: break-all;
+
+  /* Non standard for webkit */
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+@mixin ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* @include button(15px 10px, #333, $white, 16px, bold, #ccc, 10px); */
+@mixin button($padding, $bg-color, $font-color, $font-size, $font-weight, $hover-color, $borderradius) {
+	border: 0;
+	margin: 0;
+	display: inline-block;
+	padding: $padding;
+	background: $bg-color;
+	color: $font-color;
+	font-size: $font-size;
+	font-weight: $font-weight;
+	-webkit-border-radius: $borderradius;
+	-moz-border-radius: $borderradius;
+	border-radius: $borderradius;
+	text-decoration: none;
+	cursor: pointer;
+
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+
+	&:after { clear: both; }
+
+	&:hover { background: $hover-color; }
+}
+
+@mixin geometric_size($width, $height, $base: 0) {
+  @if $base == 0 {
+    width: $width;
+    padding-top: $height / $width * 100%;
+  } @else {
+    width: $width / $base * 100%;
+    padding-top: $height / $base * 100%;
+  }
+  height: 0;
+  overflow: hidden;
+}
+
+/* Calculate fluid ratio based on two dimensions (width/height)  @include fluid-ratio(800px 200px, 300px 150px);
+http://voormedia.com/blog/2012/11/responsive-background-images-with-fixed-or-fluid-aspect-ratios
+*/
+@mixin fluid_ratio($large-size, $small-size) {
+  $width-large: nth($large-size, 1);
+  $width-small: nth($small-size, 1);
+  $height-large: nth($large-size, 2);
+  $height-small: nth($small-size, 2);
+  $slope: ($height-large - $height-small) / ($width-large - $width-small);
+  $height: $height-small - $width-small * $slope;
+
+  height: $height;
+  padding-top: $slope * 100%;
+  background-size: cover;
+  background-position: center;  /* Internet Explorer 7/8 */
+}
+
+/* @include pseudo(before, 10px, 10px); */
+@mixin pseudo($el, $el-width, $el-height){
+	@if $el == "before" or $el == "after"{
+		&:#{$el}{
+			position: absolute;
+			width: $el-width;
+			height: $el-height;
+      content: '';
+			@content;
+		}
+	}
+}
+
+/* @include accelerate(transform); */
+@mixin accelerate($name) {
+  will-change: $name;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@mixin resizable($direction) {
+  resize: $direction; // Options: horizontal, vertical, both
+  overflow: auto; // Per CSS3 UI, `resize` only applies when `overflow` isn't `visible`
+}
+
+// CSS3 decorations for IE
+@mixin css3pie() {
+	position: relative;
+	zoom: 1;
+  behavior: url($piePath);
+}
+
+@mixin backgroundsize() {
+	-ms-behavior: url($backgroundsizePath);
+	behavior: url($backgroundsizePath);
+}
+
+@mixin img_responsive($fullwidth: false, $force: false) {
+  display: block;
+	@if $fullwidth {
+		width: 100%;
+	}
+  max-width: 100%;
+	@if ($force == false) {
+    height: auto;
+  } @else {
+    height: auto!important;
+  }
+}
+
+// antialiasing mode font rendering
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+@mixin transition($transition) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+@mixin animation($animation) {
+  -o-animation: $animation;
+  -moz-animation: $animation;
+  -webkit-animation: $animation;
+  animation: $animation;
+}
+
+@mixin perspective($perspective) {
+  -moz-perspective: $perspective;
+  -webkit-perspective: $perspective;
+  perspective: $perspective;
+}
+
+@mixin backface-visibility($backface) {
+  -moz-backface-visibility:$backface;
+  -webkit-backface-visibility:$backface;
+  backface-visibility:$backface
+}

@@ -1,0 +1,141 @@
+.form-group {
+  margin-bottom: 8px;
+
+  &__label {
+    width: 15%;
+    margin-bottom: 0px;
+    vertical-align: top;
+  }
+
+  &__body {
+    display: inline-block;
+    width: 84%;
+
+    &-label {
+      margin-right: 10px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+label.error {
+  display: block;
+  margin: 5px 0;
+  color: #f40723;
+  @include rem(12);
+  font-weight: normal;
+}
+
+// .form-control {
+//   height: 40px;
+//   padding: 6px 21px;
+//   color: #000;
+//   @include rem(16);
+//   border-color: #e2e2e2;
+//   @include box-shadow(1px 1px 2px 0px rgba(0,0,0,0.1));
+//
+//   &:focus {
+//     border-color: #94aaff;
+//     background-color: #e9ecfb;
+//     @include box-shadow(inset 0 1px 1px rgba(0,0,0,0.075),0 0 5px rgba(178,191,240,0.95));
+//   }
+// }
+
+input[type='text'],
+input[type='password'] {
+  @include placeholder{
+    color: #b2b2b2;
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+/* remove “X” from search input field */
+input[type="search"] {
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+   }
+}
+
+input[type="text"] {
+  &::-ms-clear,
+  &::-ms-reveal {
+    display: none;
+    width : 0;
+    height: 0;
+  }
+}
+
+.star {
+  color: #f40723;
+}
+
+fieldset {
+  margin-bottom: 25px;
+}
+
+
+// recaptcha
+.recaptcha {
+  margin-bottom: 15px;
+}
+
+// #recaptcha_area {
+//   #recaptcha_image {
+//     width: auto !important;
+//     border: 0 !important;
+//   }
+//
+//   tr {
+//     height: auto !important;
+//   }
+//
+//   .recaptchatable {
+//     border: none !important;
+//   }
+//
+//   .recaptcha_privacy {
+//     display: none;
+//   }
+//
+//   .recaptcha_image_cell {
+//     padding: 0 !important;
+//     width: auto !important;
+//     background: transparent !important;
+//
+//     ~ td {
+//       padding: 0 7px 0 7px !important;
+//     }
+//   }
+//
+//   #recaptcha_response_field {
+//     @extend .form-control;
+//     margin: 7px 0 0 -7px;
+//     @include box-shadow(1px 1px 5px rgba(186,185,185,.17), inset 0 1px 5px 1px rgba(232,223,223,.75));
+//     border: 1px solid #cccccc !important;
+//
+//     @include placeholder {
+//       color: #b2b2b2 !important;
+//     }
+//   }
+//
+//   #recaptcha_privacy {
+//     display: none !important;
+//   }
+// }
+
+
+/* Tablet */
+@media screen and (max-width: $screen-sm-max) {
+
+}
+
+/* Mobile */
+@media screen and (max-width: $screen-xs-max) {
+
+}

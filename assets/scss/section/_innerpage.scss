@@ -1,0 +1,257 @@
+/* General
+=======================================*/
+
+main {
+    background-color: $white;
+
+}
+
+.page-title {
+  margin-bottom: 20px;
+  padding: 0;
+  color: $purple;
+	@include rem(36);
+  border-bottom: 0;
+  background: none;
+  text-align: center;
+
+  .lang-tc &,
+  .lang-sc & {
+    @include rem(38);
+  }
+}
+
+.inner-content {
+  position: relative;
+}
+
+
+.full-width {
+  > .ckec {
+    margin-bottom: 127px;
+    padding: percentage(60/1540) percentage(100/1540);
+  }
+}
+
+.page-info {
+    text-align: center;
+    margin: 0 auto;
+    background-color: #eaeaea;
+    padding: 20px 45px;
+    display: inline-block;
+
+    h1 {
+        margin: 0;
+        padding: 0;
+
+        &:after {
+            border-top: 1px solid $palepurple;
+            width: 80%;
+            height: 1px;
+            margin: 10px auto 0;
+            content: " ";
+            display: table;
+        }
+    }
+}
+
+.relatlist {
+
+    margin-bottom: 36px;
+    ul { list-style: none; padding: 0; margin: 0;}
+
+    &.list-blue {
+        color: #348ea2;
+    }
+
+    &__title {
+        @include rem(22);
+        border-bottom: 1px solid gray;
+        padding:0 0 10px;
+        margin: 0 0 15px;
+    }
+
+    &__item {
+
+        @include rem(22);
+        display: inline-block;
+        width: 49%;
+        
+        a {
+            color: $black;
+            text-decoration: none;
+        }
+
+        &:before {
+            content: ">";
+            margin-right: 15px;
+        }
+    }
+}
+
+/* Sitemap
+=======================================*/
+.sitemap {
+  @extend .clearfix;
+
+  ul {
+    margin-bottom: 35px;
+  }
+
+  .ul {
+    &_lv2 {
+      margin-top: 8px;
+      margin-bottom: 12px;
+    }
+
+    &_lv3 {
+      margin-top: 8px;
+      margin-bottom: 12px;
+    }
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  &__left {
+    float: left;
+    width: 45%;
+  }
+
+  &__right {
+    float: right;
+    width: 45%;
+  }
+}
+
+
+/* X large desktop  */
+@media screen and (min-width: $screen-xl-min) {
+
+}
+
+
+/* large desktop  */
+@media screen and (max-width: $screen-xl-max) {
+  /* General
+  =======================================*/
+  .page-banner {
+    &:before {
+      right: calc(100% - 150px);
+    }
+  }
+
+  .side-content {
+    padding: 3.5% 5%;
+    @include background-size(400px auto);
+  }
+
+  /* Education
+  =======================================*/
+  .rte-img--edu .rte-img__content-wrap {
+    min-height: 220px;
+  }
+}
+
+
+/* Medium desktop  */
+@media screen and (max-width: $screen-md-max) {
+  /* General
+  =======================================*/
+  .page-banner {
+    &:before {
+      right: calc(100% - 350px);
+    }
+  }
+
+
+}
+
+
+/* Tablet */
+@media screen and (max-width: $screen-sm-max) {
+  /* General
+  =======================================*/
+  .inner-top {
+    height: 155px;
+  }
+
+  .page-title {
+  	@include rem(31);
+
+    .lang-tc &,
+    .lang-sc & {
+      @include rem(28);
+    }
+  }
+
+  .page-banner {
+    &:before {
+      right: calc(100% - 260px);
+    }
+
+    &__img {
+      height: 83%;
+    }
+  }
+
+
+  .full-width {
+    > .ckec {
+      margin-bottom: 60px;
+      padding: 2.8% 2.8% 25px;
+    }
+  }
+}
+
+
+/* Mobile */
+@media screen and (max-width: $screen-xs-max) {
+  /* General
+  =======================================*/
+  .inner-top {
+    height: auto;
+  }
+
+  .page-title {
+    margin-bottom: 16px;
+  	@include rem(28);
+
+    .lang-tc &,
+    .lang-sc & {
+      @include rem(24);
+    }
+  }
+
+  .page-banner {
+    display: none;
+  }
+
+  .inner-content {
+    margin-top: 0;
+  }
+
+  /* Sitemap
+  =======================================*/
+  .sitemap {
+    &__left,
+    &__right {
+      float: none;
+      width: auto;
+    }
+  }
+}
+
+// .collapse {
+//   display: block;
+// }

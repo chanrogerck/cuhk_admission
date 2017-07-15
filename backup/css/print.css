@@ -1,0 +1,27 @@
+@media print {
+  /* line 2, ../scss/print.scss */
+  a[href]:after {
+    content: none !important;
+  }
+
+  /* line 6, ../scss/print.scss */
+  .page-foot,
+  .tools,
+  .head-btm,
+  .inner-top,
+  .side-menu,
+  .slider--school,
+  .slider--student,
+  .btn--scholars-hub,
+  .btn--back,
+  .event-detail-share,
+  .btn--more-event,
+  .events__share,
+  .page,
+  .btn--zoom,
+  .panel__heading-btn:before,
+  .panel__heading-btn:after,
+  .btn--toggle-all {
+    display: none !important;
+  }
+}

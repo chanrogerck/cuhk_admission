@@ -1,0 +1,103 @@
+.form-group {
+  input {
+    &[type="radio"],
+    &[type="checkbox"] {
+      width: 16px;
+      margin-right: 7px;
+      opacity: 0;
+    }
+  }
+}
+
+.icheckbox,
+.iradio {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-right: 7px;
+  vertical-align: middle;
+	background: inline-image('lib_radio_checkbox/icons.png') no-repeat;
+	border: none;
+	cursor: pointer;
+
+	&.focus {
+    outline: 1px dotted rgba(0,0,0,0.5) !important;
+  }
+}
+
+.iradio {
+	position: relative;
+	top: -1px;
+  background-position: 0 0;
+
+	&.checked {
+		background-position: -18px 0;
+	}
+
+	// &.disabled {
+	// 	background-position: -53px 0;
+	// 	cursor: default;
+  // }
+	//
+	// &.checked.disabled {
+	// 	background-position: -154px 0;
+	// }
+}
+
+.icheckbox {
+  background-position: -36px 0;
+
+	&.checked {
+		background-position: -53px 0;
+	}
+
+	// &.disabled {
+	// 	background-position: -34px 0;
+	// 	cursor: default;
+  // }
+	//
+	// &.checked.disabled {
+	// 	background-position: -52px 0;
+	// }
+}
+
+/* HiDPI support */
+@media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi), (min-resolution: 1.25dppx) {
+  // .icheckbox,
+  // .iradio {
+  //   background-image: inline-image('lib_radio_checkbox/blue@2x.png');
+  //   -webkit-background-size: 176px 22px;
+  //   background-size: 176px 22px;
+  // }
+}
+
+
+/* Tablet */
+@media screen and (max-width: $screen-sm-max) {
+
+}
+
+/* Mobile */
+@media screen and (max-width: $screen-xs-max) {
+	.icheckbox,
+  .iradio {
+		width: 12px;
+		height: 12px;
+		margin-right: 4px;
+    background-size: auto 12px;
+  }
+
+	.iradio {
+		&.checked {
+			background-position: -14px 0;
+		}
+  }
+
+	.icheckbox {
+	  background-position: -26px 0;
+
+		&.checked {
+			background-position: -39px 0;
+		}
+  }
+}

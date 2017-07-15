@@ -1,0 +1,68 @@
+/* General
+=======================================*/
+html,
+body {
+  min-height: 100%;
+}
+
+/* mouse */
+[data-whatinput="mouse"] :focus {
+  outline: 0!important;
+}
+
+/* keyboard */
+[data-whatinput="keyboard"] :focus {
+  // outline-color: green;
+}
+
+/* touch */
+[data-whatinput="touch"] :focus {
+  // outline-color: blue;
+}
+
+body {
+  -ms-overflow-style: scrollbar; /* turns off the auto-hiding behavior in ie10/11 */
+}
+
+* {
+  max-height: 100000px; /* Font Boosting disabled in Android Chrome */
+}
+
+*:not(tbody,tr,td,th){
+    -moz-backface-visibility:hidden;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+
+.wrapper {
+	position: relative;
+	overflow: hidden;
+	min-width: 320px;
+}
+
+main {
+  background: image-url('bg_main-l.png') no-repeat left top, image-url('bg_main-btm.jpg') no-repeat right bottom;
+  background-color: $blue;
+  outline: 0;
+}
+
+@media screen and (min-width: $screen-xl-min) {
+  .container {
+    //width: 1600px;
+    width: 1570px;
+  }
+}
+
+/* large desktop  */
+@media screen and (max-width: $screen-xl-max) {
+  main {
+    @include background-size(600px auto, 300px auto);
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: $screen-sm-max) {
+
+}
+
+/* Mobile */
+@media screen and (max-width: $screen-xs-max) {
+
+}

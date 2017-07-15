@@ -1,0 +1,26 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+ // Import Bootstrap Compass integration
+@import "bootstrap-compass";
+
+ // Import custom Bootstrap variables
+@import "bootstrap-variables";
+
+ // Import Bootstrap for Sass
+@import "bootstrap";
+
+@import "base/_var";
+@import "base/_mixin";
+@import "base/_typo";
+
+@import "section/_main";
+@import "section/_header";
+@import "section/_menu";
+@import "section/_breadcrumb";
+@import "section/_footer";
+
+
+@import "section/_indexpage";
