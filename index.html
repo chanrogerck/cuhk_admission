@@ -25,45 +25,51 @@
         <header class="page-head menu">
             <div class="container">
                 <a class="page-logo page-logo--main" href="#">
-                    <img src="assets/img/logo_1x.png" srcset="assets/img/logo_2x.png 2x" width="297" alt="CUHK Undergrate Admission" />
+                    <img src="assets/img/logo_1x.png" srcset="assets/img/logo_2x.png 2x" alt="CUHK Undergrate Admission" />
                 </a>
 
                 <div class="navigate">
-                    <ul class="tools hidden-sm hidden-xs">
+                    <ul class="tools">
                         <li class="tools__item tools__item--lang">
                             <a href="#" target="_blank">繁</a>
                         </li>
                         <li class="tools__item tools__item--lang">
-                            <a href="#" target="_blank">簡</a>
+                            <a href="#" target="_blank">简</a>
                         </li>
-                        <li class="tools__item tools__item--share">
+                        <li class="tools__item tools__item--share hidden-md hidden-sm hidden-xs">
                             <a href="#" target="_blank"><span class="icon-share2"></span></a>
                         </li>
-                        <li class="tools__item search-blk">
+                        <li class="tools__item search-blk hidden-sm hidden-xs">
                             <form class="search" method="get" action="/search">
-                                <span class="icon-search"></span>
                                 <input class="search__box" type="text" name="q" placeholder="Search" title="Search">
+                                <span class="icon-search"></span>
                                 <input type="submit" class="hidden" value="Search" />
                             </form>
                         </li>
+                        <li class="mobi-menu-trigger visible-md visible-sm visible-xs hidden-lg">
+                            <div>
+                                <button class="navbar-toggle" data-toggle="collapse" data-target=".btnCollapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                        </li>
                     </ul>
-                    <nav class="menu">
+                    <nav class="menu hidden-md hidden-sm hidden-xs">
                         <ul class="menu__list menu__list--lv1">
-                            <li class="menu__item menu__item--lv1 has-sub lv1">
-                                <a href="#">WHY CUHK</a>
-                            </li>
-                            <li class="menu__item menu__item--lv1 has-sub lv1">
-                                <a href="#">EXPERIENCE CUHK</a>
+                            <li class="menu__item menu__item--lv1 has-sub lv1"><a href="#" class="menu__link menu__link--lv1"><span class="menu__text menu__text--lv1">WHY CUHK</span></a></li>
+                            <li class="menu__item menu__item--lv1 has-sub lv1"><a href="#" class="menu__link menu__link--lv1"><span class="menu__text menu__text--lv1">EXPERIENCE CUHK</span></a>
                                 <ul class="menu__list menu__list--lv2 flex">
-                                    <li class="menu__item menu__item--lv2 flex__item">
+                                    <li class="menu__item menu__item--lv2 flex__item menu__item--lv2-col">
                                         <a class="menu__link menu__link--lv2" href="#">
-                              <span class="menu__text menu__text--lv2">WELCOME MESSAGE</span>
-                          </a>
+                                            <span class="menu__text menu__text--lv2">WELCOME MESSAGE</span>
+                                        </a>
                                     </li>
-                                    <li class="menu__item menu__item--lv2 flex__item">
+                                    <li class="menu__item menu__item--lv2 flex__item menu__item--lv2-col">
                                         <a class="menu__link menu__link--lv2" href="#">
-                              <span class="menu__text menu__text--lv2">EXPLORE CUHK</span>
-                          </a>
+                                            <span class="menu__text menu__text--lv2">EXPLORE CUHK</span>
+                                        </a>
                                         <ul class="menu__list menu__list--lv3">
                                             <li class="menu__item menu__item--lv3"><a class="menu__link menu__link--lv3" href="#"><span class="menu__text menu__text--lv3">Explore CUHK</span></a></li>
                                             <li class="menu__item menu__item--lv3"><a class="menu__link menu__link--lv3" href="#"><span class="menu__text menu__text--lv3">Distinguished Scholars</span></a></li>
@@ -71,10 +77,10 @@
                                             <li class="menu__item menu__item--lv3"><a class="menu__link menu__link--lv3" href="#"><span class="menu__text menu__text--lv3">Virtual Campus Tour</span></a></li>
                                         </ul>
                                     </li>
-                                    <li class="menu__item menu__item--lv2 flex__item">
-                                        <a class="menu__link menu__link--lv2" href="/people/research-staff">
-                          <span class="menu__text menu__text--lv2">STUDENT LIFE</span>
-                        </a>
+                                    <li class="menu__item menu__item--lv2 flex__item menu__item--lv2-col">
+                                        <a class="menu__link menu__link--lv2" href="#">
+                                            <span class="menu__text menu__text--lv2">STUDENT LIFE</span>
+                                        </a>
                                         <ul class="menu__list menu__list--lv3">
                                             <li class="menu__item menu__item--lv3"><a class="menu__link menu__link--lv3" href="#"><span class="menu__text menu__text--lv3">Campus &amp; Accomodations</span></a></li>
                                             <li class="menu__item menu__item--lv3"><a class="menu__link menu__link--lv3" href="#"><span class="menu__text menu__text--lv3">Student Exchange Programme</span></a></li>
@@ -83,40 +89,33 @@
                                             <li class="menu__item menu__item--lv3"><a class="menu__link menu__link--lv3" href="#"><span class="menu__text menu__text--lv3">Voices of Students</span></a></li>
                                         </ul>
                                     </li>
-                                    <li class="menu__item menu__item--lv2 flex__item">
-                                        <a class="menu__link menu__link--lv2" href="/people/research-staff">
-                          <span class="menu__text menu__text--lv2">COLLEGES</span>
-                        </a>
+                                    <li class="menu__item menu__item--lv2 flex__item menu__item--lv2-col">
+                                        <a class="menu__link menu__link--lv2" href="#">
+                                            <span class="menu__text menu__text--lv2">COLLEGES</span>
+                                        </a>
                                         <ul class="menu__list menu__list--lv3">
                                             <li class="menu__item menu__item--lv3"><a class="menu__link menu__link--lv3" href="#"><span class="menu__text menu__text--lv3">A Unique College System</span></a></li>
                                             <li class="menu__item menu__item--lv3"><a class="menu__link menu__link--lv3" href="#"><span class="menu__text menu__text--lv3">College Assignment</span></a></li>
                                         </ul>
                                     </li>
-                                    <li class="menu__item menu__item--lv2 flex__item">
-                                        <a class="menu__link menu__link--lv2" href="/people/research-staff">
-                          <span class="menu__text menu__text--lv2">CUHK THROUGH THE LENS</span>
-                        </a>
+                                    <li class="menu__item menu__item--lv2 flex__item menu__item--lv2-col">
+                                        <a class="menu__link menu__link--lv2" href="#">
+                                            <span class="menu__text menu__text--lv2">CUHK THROUGH THE LENS</span>
+                                        </a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="menu__item menu__item--lv1 has-sub lv1">
-                                <a href="#">PROGRAMMES</a>
+                                <a href="#" class="menu__link menu__link--lv1"><span class="menu__text menu__text--lv1">PROGRAMMES</span></a>
                             </li>
                             <li class="menu__item menu__item--lv1 has-sub lv1">
-                                <a href="#">APPLY</a>
+                                <a href="#" class="menu__link menu__link--lv1"><span class="menu__text menu__text--lv1">APPLY</span></a>
                             </li>
                             <li class="menu__item menu__item--lv1 has-sub lv1">
-                                <a href="#">SCHOLARSHIP &amp; AID</a>
+                                <a href="#" class="menu__link menu__link--lv1"><span class="menu__text menu__text--lv1">SCHOLARSHIP &amp; AID</span></a>
                             </li>
                         </ul>
                     </nav>
-                </div>
-
-
-                <div class="mobi-menu-trigger visible-sm-block visible-xs-block">
-                    <button class="btn btn--open-mobi-menu js-open-mobi-menu" type="button">
-                <span><span class="sr-only">Open menu</span></span>
-            </button>
                 </div>
             </div>
         </header>
@@ -143,14 +142,19 @@
                         ensures a good relationship among all the students who are generous in sharing their insights. We have a strong bonding with each other and I am quite proud of it. We will help each other with the assignments and projects which
                         may consume too much time if attempted alone. The edge given by the platform and the harmonious relationship among students are valuable assets to me."
                     </p>
-                    <img src="assets/img/detail-1.jpg" alt="dummy" />
+                    <p><img src="assets/img/detail-1.jpg" alt="dummy" style="width:100%;" /></p>
                     <p>QFRM incorporates courses on selected topics to provide an opportunity for the students to learn more of the latest developments in the financial industry. It also arranges capstone courses, e.g., through internship experience, that
                         give the students a chance to put newly acquired knowledge to use to try to solve the urgent and prevalent problems in the industry.</p>
                     <p>According to Professor Phillip Yam, Co-Director of QFRM, "This is the first and only programme that provides an all-rounded training and panoramic view on the whole quantitative financial and trading industry. We have two strong programmes
                         in Quantitative Finance and in Risk Management Science. Our extensive alumni network is enviable to similar programmes in other universities."</p>
-                    <div class="page-dialog full-width">
-
-                    </div>
+                </div>
+                <!--<div class="ppl-blk full-width">
+                    <img src="" alt="" class="ppl-blk__img">
+                    <p class="ppl-blk__quote">The edge given by the platform and the harmonious relationship among students are valuable assets to me.</p>
+                    <p class="ppl-blk__source">Song Shiyu, Year 3 in QFRM.</p>
+                </div>-->
+                <div class="ckec cke_editable">
+                    <p><img src="assets/img/student-says.jpg" alt="The edge given by the platform and the harmonious relationship among students are valuable assets to me."></p>
                     <p>The programme benefits from the combined strengths of CUHK’s Department of Finance and Department of Statistics. Shiyu said, “We met great professors, 28 and 20 from Finance and Statistics, respectively, who take care of our learning
                         needs. We can always consult them, and every time they would listen patiently to our problems and guide us towards finding a solution.” Academic counselling sessions are held to give an overview of study at CUHK in general and
                         the requirements of QFRM in particular. Then there are regular informal tea gatherings where students can express their views and raise questions to the programme co-directors. </p>
@@ -162,7 +166,7 @@
                         with alumni and practitioners, among other things, are organized throughout the year. Those who graduated in 2016 had on average completed three internships by the time of graduation. The students may also join the mentorship and
                         buddy programmes organized by either department.”
                     </p>
-                    <img src="assets/img/detail-2.jpg" alt="dummy" />
+                    <p><img src="assets/img/detail-2.jpg" alt="dummy" style="width:100%;" /></p>
                     <p>QFRM graduates are well prepared for further study or career development in the industry. Professor Chow said, “Many of our graduates pursued postgraduate studies in renowned institutions such as Imperial College London, Columbia,
                         Pennsylvania and Berkeley in areas such as Statistics, Finance and Economics. Others are employed by institutions and companies such as the Hong Kong Monetary Authority, HKEx, Goldman Sachs, Bank of America Merrill Lynch, Deutsche
                         Bank, BlackRock, Microsoft, HSBC, etc.” Established in 2009, QFRM is consistently ranked top among the quantitatively related programmes in Hong Kong. Professor Chow has this advice for the prospective students: “Talk with the
@@ -171,49 +175,49 @@
                         are looking for a promising career, you should go ahead with your choice.”
                     </p>
                 </div>
-                <div class="course-detail detial-purple">
-                    <div class="flex">
-                        <div class="flex__item">
+                <div class="course-detail detail-purple">
+                    <div class="course-detail__list">
+                        <div class="course-detail__item">
                             <p class="title">Programme Code</p>
                             <p>QFRM</p>
                         </div>
-                        <div class="flex__item">
+                        <div class="course-detail__item">
                             <p class="title">JUOAS Code</p>
                             <p>JS4276</p>
                         </div>
-                        <div class="flex__item">
+                        <div class="course-detail__item">
                             <p class="title">Open for</p>
-                            <p>JUPAS &amps; Non-JUPAS</p>
+                            <p>JUPAS &amp; Non-JUPAS</p>
                         </div>
-                        <div class="flex__item">
+                        <div class="course-detail__item">
                             <p class="title">Quota</p>
                             <p>20</p>
                         </div>
-                        <div class="flex__item">
+                        <div class="course-detail__item">
                             <a href="#" class="btn btn--apply">Apply Now</a>
                         </div>
                     </div>
-                    <ul class="course__list">
-                        <li class="course__item"><a href="#">Programme Website</a></li>
-                        <li class="course__item"><a href="#">Department Website</a></li>
-                        <li class="course__item"><a href="#">Faculty Website</a></li>
+                    <ul class="course-list">
+                        <li class="course-list__item"><a href="#">Programme Website</a></li>
+                        <li class="course-list__item"><a href="#">Department Website</a></li>
+                        <li class="course-list__item"><a href="#">Faculty Website</a></li>
                     </ul>
                 </div>
                 <div class="relatlist list-blue">
                     <p class="relatlist__title">Programmes You May Interested In</p>
-                    <ul class="relatlist__list">
-                        <li class="relatlist__item"><a href="#">JD Double Degree Program</a></li>
-                        <li class="relatlist__item"><a href="#">Insurance, Financial and Actuarial Analysis</a></li>
-                        <li class="relatlist__item"><a href="#">Hospitality and Real Estate</a></li>
-                        <li class="relatlist__item"><a href="#">Global Economics and Finance</a></li>
-                        <li class="relatlist__item"><a href="#">Quantitative Finance</a></li>
+                    <ul class="relatlist__list row">
+                        <li class="relatlist__item col-md-6"><a href="#">JD Double Degree Program</a></li>
+                        <li class="relatlist__item col-md-6"><a href="#">Insurance, Financial and Actuarial Analysis</a></li>
+                        <li class="relatlist__item col-md-6"><a href="#">Hospitality and Real Estate</a></li>
+                        <li class="relatlist__item col-md-6"><a href="#">Global Economics and Finance</a></li>
+                        <li class="relatlist__item col-md-6"><a href="#">Quantitative Finance</a></li>
                     </ul>
                 </div>
                 <div class="relatlist list-blue">
                     <p class="relatlist__title">Related Articles</p>
                     <ul class="relatlist__list">
-                        <li class="relatlist__item"><a href="#">Do Asian Family Businesses Destroy Themselves?</a></li>
-                        <li class="relatlist__item"><a href="#">Taking the University Or into the World</a></li>
+                        <li class="relatlist__item col-md-6"><a href="#">Do Asian Family Businesses Destroy Themselves?</a></li>
+                        <li class="relatlist__item col-md-6"><a href="#">Taking the University Or into the World</a></li>
                     </ul>
                 </div>
             </div>
@@ -224,23 +228,36 @@
                     <button class="btn btn--top js-top" type="button">Top</button>
                 </div>-->
                 <a href="#" class="foot-logo"><img src="assets/img/logo-cuhk_1x.jpg" srcset="assets/img/logo-cuhk_2x.png 2x" width="297" alt="CUHK Undergrate Admission" /></a>
-                <ul class="foot-links list-unstyled">
-                    <li class="foot-links__item">
-                        <a class="foot-links__link" href="#">Privacy Policy and Disclaimer</a>
-                    </li>
-                    <li class="foot-links__item">
-                        <a class="foot-links__link" href="#">Equal Opportunities</a>
-                    </li>
-                    <li class="foot-links__item">
-                        <a class="foot-links__link" href="#">Contact Us</a>
-                    </li>
-                    <li class="foot-links__item">
-                        <a class="foot-links__link" href="#">Sitemap</a>
-                    </li>
-                    <li class="foot-links__item foot-links__item--copy">Copyright &copy; 2017. All Rights Reserved.The Chinese University of Hong Kong</li>
-                </ul>
+                <div class="foot__item">
+                    <ul class="foot-links list-unstyled">
+                        <li class="foot-links__item">
+                            <a class="foot-links__link" href="#">Privacy Policy and Disclaimer</a>
+                        </li>
+                        <li class="foot-links__item">
+                            <a class="foot-links__link" href="#">Equal Opportunities</a>
+                        </li>
+                        <li class="foot-links__item">
+                            <a class="foot-links__link" href="#">Contact Us</a>
+                        </li>
+                        <li class="foot-links__item">
+                            <a class="foot-links__link" href="#">Sitemap</a>
+                        </li>
+                    </ul>
+                    <p class="foot__item--copy">Copyright &copy; 2017. All Rights Reserved.
+                        <span class="nowrap">The Chinese University of Hong Kong</span></p>
+                </div>
             </div>
         </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 
 </html>

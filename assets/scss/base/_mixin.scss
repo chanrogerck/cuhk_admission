@@ -88,6 +88,15 @@
 	align-items: center;
 }
 
+@mixin flexbox {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: space-between;
+}
+
 /* convert font size units - pxem(40px)*/
 @function pxem($px, $context: 16) {
 	@return ($px / $context) * 1em;
@@ -306,6 +315,14 @@ http://voormedia.com/blog/2012/11/responsive-background-images-with-fixed-or-flu
 	    -ms-transform: $transforms;
 	-webkit-transform: $transforms;
           transform: $transforms;
+}
+
+@mixin transition($transition-property, $transition-time, $method) {
+	-webkit-transition: $transition-property $transition-time $method;
+	-moz-transition: $transition-property $transition-time $method;
+	-ms-transition: $transition-property $transition-time $method;
+	-o-transition: $transition-property $transition-time $method;
+	transition: $transition-property $transition-time $method;
 }
 
 @mixin background-size($size) {

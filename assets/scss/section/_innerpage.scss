@@ -4,6 +4,9 @@
 main {
     background-color: $white;
 
+    > .container {
+        padding: 0 percentage(115/1440) 125px;
+    }
 }
 
 .page-title {
@@ -21,6 +24,10 @@ main {
   }
 }
 
+.inner-top {overflow: hidden;
+    .inner-poster {width: 100%; }
+}
+
 .inner-content {
   position: relative;
 }
@@ -36,13 +43,14 @@ main {
 .page-info {
     text-align: center;
     margin: 0 auto;
-    background-color: #eaeaea;
-    padding: 20px 45px;
     display: inline-block;
+    @include flexbox();
+    justify-content: center;
 
     h1 {
+        background-color: #eaeaea;
         margin: 0;
-        padding: 0;
+        padding: 20px 45px;
 
         &:after {
             border-top: 1px solid $palepurple;
@@ -62,31 +70,129 @@ main {
 
     &.list-blue {
         color: #348ea2;
+        border-color: #348ea2;
     }
 
     &__title {
         @include rem(22);
-        border-bottom: 1px solid gray;
-        padding:0 0 10px;
-        margin: 0 0 15px;
+        border-bottom: 1px solid;
+        padding:0 0 15px;
+        margin: 0 0 25px;
     }
 
     &__item {
-
+        padding-left: 0;
         @include rem(22);
-        display: inline-block;
-        width: 49%;
-        
+        vertical-align: top;
+
         a {
             color: $black;
             text-decoration: none;
+            position: relative;
+            left: 20px;
         }
 
         &:before {
             content: ">";
             margin-right: 15px;
+            position: absolute;
+            height: 100%;
         }
     }
+}
+
+.course-detail {
+    border-top: 8px solid #333;
+    color: #333;
+    padding-top: 50px;
+    margin-bottom: 55px;
+
+    .course-detail {
+
+        &__list {
+            margin-bottom: 65px;
+            @include flexbox;
+        }
+
+        &__item{
+            position: relative;
+            @include rem(24);
+            padding: 0 percentage(20/1112);
+            flex: 1;
+            border-left: 1px solid gray;
+
+            .title {color: $purple;}
+            p {color: #202020; margin-bottom: 5px; line-height: 1.2;}
+
+
+            &:first-child {
+                padding-left: 0;
+                border-left: 0;
+            }
+            &:last-child {
+                text-align: right;
+                padding-right: 0;
+                border-left: 0;
+            }
+        }
+    }
+
+    .course-list {
+        list-style: none;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+
+        &__item {
+            @include inline_block();
+            @include rem(20);
+            margin-right: 60px;
+
+            a {text-decoration: none; line-height: 1.6}
+
+            &:after{
+                width: 24px;
+                height: 24px;
+                margin-left: 15px;
+                display: inline-block;
+                content: "";
+                vertical-align: middle;
+                background:url(data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVBAMAAABbObilAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAALVBMVEX///+DO4SDO4SDO4SDO4SDO4SDO4SDO4SDO4SDO4SDO4SDO4SDO4SDO4QAAAAxKXLAAAAADXRSTlMAEFCAQK+P75/PYCDf/R/qrAAAAAFiS0dEDm+9ME8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfhBxEAKguz8JvNAAAAfklEQVQI12NgYGBgVDZWZIAAlti7d++GQNi5FQ4MHrUJICbHVQEgKXoDLNzAYASkeoESLFcZGOYuYGBgvQLEhQwMkreAhpUyMMg2AGmQRK8Ag64DA0TCV4HBFqQfJMFrAGEz7D0AZ0PFkdUjm4NsPrK9yO5BcSey+1H8BfcvAF/PK3YcuOxQAAAAAElFTkSuQmCC) no-repeat right top;
+            }
+        }
+    }
+
+    .btn--apply {
+        text-align: center;
+        text-transform: uppercase;
+        color: $white;
+        background-color: #333;
+        width: 180px;
+        padding: 0;
+        line-height: 50px;
+        border-radius: 0;
+        text-decoration: none;
+        @include rem(18);
+    }
+
+    &.detail-purple {
+        border-top-color: #833b84;
+        color: #833b84;
+
+        .course-detail__item {
+            border-left-color: #833b84;
+        }
+        .btn--apply {
+            background-color: #833b84;
+        }
+
+        .course-list {
+            a {color: #833b84;}
+            &:after{}
+        }
+
+    }
+
 }
 
 /* Sitemap
@@ -132,6 +238,33 @@ main {
     float: right;
     width: 45%;
   }
+}
+
+@media screen and (max-width: $screen-md-max) and (min-width: $screen-sm-max) {
+    .course-detail {
+
+        .course-detail {
+
+            &__list {
+                display: block;
+            }
+
+            &__item {
+                padding: 0;
+                margin: 0 0 10px;
+
+                &:before {
+                    display: none;
+                }
+
+                &:last-child{
+                    text-align: left;
+                }
+
+                p { display: inline-block;}
+            }
+        }
+    }
 }
 
 
@@ -229,7 +362,7 @@ main {
 
     .lang-tc &,
     .lang-sc & {
-      @include rem(24);
+       @include rem(24);
     }
   }
 

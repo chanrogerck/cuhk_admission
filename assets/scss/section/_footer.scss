@@ -62,10 +62,19 @@
       color: #f0d100;
     }
   }
+
+  .foot-logo { float: left}
+
+  p { text-align: right; margin-bottom: 0; }
+
+  .nowrap {white-space: nowrap;}
+
+  .foot__item {
+      float: right; text-align: right;
+  }
 }
 
 .foot-links {
-  float: right;
   margin: 0;
   text-align: right;
 
@@ -91,12 +100,9 @@
       }
     }
 
-    &--copy {
-      display: block;
-      margin-top: 3px;
-
-      &:before {
-        display: none;
+    &:last-child {
+      a {
+        padding-right: 0;
       }
     }
   }
@@ -108,26 +114,9 @@
 
 /* large desktop  */
 @media screen and (max-width: $screen-xl-max) {
-  .page-foot {
-  	@include rem(12);
-  }
-
-  .socials {
-    margin-right: 21px;
-
-    &__item {
-      width: 32px;
-      height: 31px;
-      margin-left: 7px;
-    }
-  }
 
   .foot-links {
     &__item {
-      &:before {
-        top: -1px;
-        @include rem(12);
-      }
 
       &__link {
         padding: 0 14px;
@@ -157,33 +146,44 @@
 
 /* Medium desktop  */
 @media screen and (max-width: $screen-md-max) and (min-width: $screen-sm-max) {
-  .page-foot {
-  	@include rem(10);
-  }
 
-  .foot-links {
-    margin-top: 7px;
+    .page-foot {
+        @include rem(14);
 
-    &__item {
-      &:before {
-        @include rem(10);
-      }
+        .foot__item {
+            float: none;
+        }
+        .foot-links {
+            margin-top: 7px;
+            &__item:before {
+                @include rem(14);
+            }
+        }
     }
-  }
-
-  .dl-app {
-    &:before {
-      left: -125px;
-    }
-  }
 }
 
 
 /* Tablet */
 @media screen and (max-width: $screen-sm-max) {
-  .foot-links {
-    margin-bottom: 25px;
-  }
+
+    .page-foot {
+        @include rem(14);
+        text-align: center;
+
+        .foot-logo { float: none;}
+
+        p { text-align: center;}
+
+        .foot__item {
+            float: none;
+        }
+
+        .foot-links {
+          margin: 25px 0;
+          float: none;
+          text-align: center;
+        }
+    }
 
 	.btn-top-box {
 		$w: 45px;
@@ -212,34 +212,23 @@
 /* Mobile */
 @media screen and (max-width: $screen-xs-max) {
   .page-foot {
-  	@include rem(14);
-	text-align: center;
-  }
-
-  .socials {
-    float: none;
-    margin-right: 0;
-
-    &__item {
-      width: 40px;
-      height: 38px;
-      margin-left: 13px;
-    }
-  }
-
-  .foot-links {
-    float: none;
-    margin-top: 15px;
-
-    &__item {
-      &:before {
-        @include rem(14);
+      @include rem(14);
+      .foot-links {
+        margin-bottom: 25px;
+        float: none;
+        text-align: center;
       }
+      .foot__item {
+          float: none;
+          margin-top: 15px;
 
-      &--copy {
-        line-height: 1.7;
-      }
+          &__item {
+
+              &--copy {
+                  line-height: 1.7;
+              }
+          }
+        }
+
     }
-  }
-
 }

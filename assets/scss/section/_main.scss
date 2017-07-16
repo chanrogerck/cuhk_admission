@@ -42,10 +42,13 @@ main {
   outline: 0;
 }
 
+.flex {
+    @include flexbox();
+}
+
 @media screen and (min-width: $screen-xl-min) {
   .container {
-    //width: 1600px;
-    width: 1570px;
+    width: percentage(1340/1440);
   }
 }
 
