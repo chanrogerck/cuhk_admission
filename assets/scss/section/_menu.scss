@@ -65,7 +65,7 @@
             width: 100%;
             min-height: 180px;
             padding: 35px percentage(90/1440);
-            @include transform(translate3d(0, 100%, 0));
+            @include transform(translate3d(0, 200px, 0));
             @include box-shadow(1px 3px 6px 0px rgba(0, 0, 0, .15));
             @include transition(all, .38s, $smooth);
             will-change: transform;
@@ -177,457 +177,248 @@
             box-shadow:inset 1px 0px 0px 0px #fff;
         }
     }
+}
 
-    /* large desktop  */
-    @media screen and (max-width: $screen-xl-max) {
+    .mobi-panel {
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 10001;
+        background-color:#353535;
+        width: 100%;
+        height: 100%;
+        @include accelerate(transform);
+        @include transform(translate3d(100%, 0, 0));
+        @include transition(transform, .35s, $smooth);
+        overflow-y: scroll; /* Momentum scrolling on iOS overflow elements, has to be scroll, not auto */
+        -webkit-overflow-scrolling: touch;
 
-    }
-    /* Medium desktop  */
-    @media screen and (max-width: $screen-md-max) {
-        .menu__blk {
-            &:after {
-                right: calc((100vw - 970px) / -2);
-            }
+        .flex { display:block}
+
+        .ie9 & {
+            right: -100%;
         }
 
-        .menu {
-            &__list {
-                // lv2 col
-                &--lv2-col {
-                    padding: 0 30px;
-                }
-            }
-
-            &__item {
-                &:last-child {
-                    .menu__list--lv2 {
-                        right: 27px;
-
-                        .ipad & {
-                            right: 28px;
-                        }
-
-                        .lang-sc &,
-                        .lang-tc & {
-                            right: 60px;
-                        }
-
-                        .ipad .lang-sc &,
-                        .ipad .lang-tc & {
-                            right: 59px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    /* Tablet */
-    @media screen and (max-width: $screen-sm-max) {
-        .btn--open-mobi-menu {
-            position: relative;
-            display: block;
-            width: 23px;
-            height: 100%;
-            overflow: hidden;
-            padding: 0;
-            outline: 0!important;
-
-             &:before,
-            &:after,
-            > span {
-                position: absolute;
-                left: 0;
-                z-index: 100;
-                width: 100%;
-                height: 3px;
-                content: '';
-                background: #808080;
-            }
-
-            > span {
-                top: 23px;
-            }
-
-            &:before {
-                top: 14px;
-            }
-
-            &:after {
-                top: 32px;
-            }
-        }
-        // mobile menu
-        .mobi-panel {
-            position: fixed;
-            //left: 0;
-            right: 0;
-            top: 0;
-            z-index: 10001;
-            width: 100%;
-            height: 100%;
-            background-color: #304076;
-            @include accelerate(transform);
-            @include transform(translate3d(100%, 0, 0));
-            @include transition(transform, .35s, $smooth);
-            overflow-y: scroll;
-            /* Momentum scrolling on iOS overflow elements, has to be scroll, not auto */
-            -webkit-overflow-scrolling: touch;
-
-            .ie9 & {
-                right: -100%;
-            }
-
-            .animating & {
-                @include transform(translate3d(0, 0, 0));
-
-                .ie9 & {
-                    right: 0;
-                }
-            }
-
-            a {
-                text-decoration: none;
-            }
-        }
+        a:hover {color: $yellow;}
 
         .close-mobi-menu-container {
-            text-align: right;
-        }
+            padding: 25px percentage(25/640);
+            background-color: #484747;
 
-        .btn--close-mobi-menu {
-            // position: absolute;
-            // right: 4px;
-            // top: 8px;
-            margin: 5px 5px 0 0;
-            color: $white!important;
-            outline: 0!important;
-
-            &:before {
-                margin-right: 0;
-                font-weight: bold;
-            }
-        }
-
-        .tools--mobi {
-            float: none;
-            margin-top: 10px;
-            text-align: left;
-
-            .tools__item {
-                display: block;
-                margin: 0;
-            }
-
-            a {
-                color: $white;
-                @include rem(22);
-
-                .lang-sc &,
-                .lang-tc & {
-                    @include rem(18);
-                }
-            }
-
-            .quick-links {
-                padding-bottom: 3px;
-
-                &__item {
-                    display: block;
-                    margin-left: 10px;
-                    margin-right: 10px;
-                    padding: 8px 34px 4px 10px;
-                    letter-spacing: 1px;
-                    border-bottom: 2px solid #525f8c;
-                }
-            }
-
-            .hku-home,
-            .lang {
-                a {
-                    display: block;
-                    height: 47px;
-                    margin: 15px 10px;
-                    line-height: 47px;
-                    text-align: center;
-                    background-color: #4f5c8a;
-                }
-            }
-
-            .search {
-                position: relative;
-                margin: 0 10px 15px;
-
-                &__box {
-                    width: 100%;
-                    height: 47px;
-                    padding-left: 38px;
-                    @include rem(22);
-                    border: 2px solid #7883a6;
-
-                    .lang-sc &,
-                    .lang-tc & {
-                        @include rem(18);
-                    }
-                    @include placeholder {
-                        color: $white;
-                    }
-                }
-            }
-
-            .icon-font--search {
-                position: absolute;
-                left: 12px;
-                top: 11px;
-                color: $white;
-            }
         }
 
         .btn-toggle-mobi-submenu {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            z-index: 100;
-            width: 34px;
-            line-height: 46px;
-            text-align: center;
-            @include rem(16);
-
-            &:before {
-                content: '\e80c';
-            }
+            float: right; margin-top: 8px;
+            &:before {content: "\e902"}
+        }
+        .btn--close-mobi-menu {
+           color: $yellow;
+           background:none;
+           font-size: 45px;
         }
 
         .mobi-menu {
-            &__list {
-                margin: 0;
-                padding: 0;
-                list-style: none;
-                // lv1
+            &__item {
                 &--lv1 {
-                    // padding: 0 0 6px;
+                    border-bottom: 1px solid #666;
+
+                    &:last-child {border: none;}
                 }
-                // lv2
+
+                &.is-active {
+
+                    > .mobi-menu__link { color: $yellow; border-bottom-color: $yellow;
+                        .btn-toggle-mobi-submenu:before {content: "\e903"; color: $yellow;}
+                    }
+
+                    &.mobi-menu__item--lv2 {
+                        .mobi-menu__link--lv2 {border-bottom:1px solid $yellow;}
+                    }
+                }
+            }
+            &__list{
+                &--lv1 {
+                    padding: 40px percentage(68/640);
+                }
                 &--lv2 {
                     display: none;
-
-                    .mobi-menu__item--lv2:last-child {
-                        .mobi-menu__link--lv2 {
-                            border-bottom: 0;
-                        }
-                    }
-
-                    .btn-toggle-mobi-submenu {
-                        right: 9px;
-                        @include rem(12);
-
-                        &:before {
-                            content: '\e801';
-                        }
-                    }
+                    padding: 0 0 0 percentage(30/640);
                 }
-                // lv2 col
-                &--lv2-col {
-                    &:last-child {
-                        .mobi-menu__item--lv2:last-child .mobi-menu__link--lv2 {
-                            border-bottom: 0;
-                        }
-                    }
 
-                    .btn-toggle-mobi-submenu {
-                        right: 9px;
-                        @include rem(12);
-
-                        &:before {
-                            content: '\e801';
-                        }
-                    }
-                }
-                // lv3
                 &--lv3 {
                     display: none;
-                }
-                // lv3 col
-                &--lv3-col {
-                    display: none;
-                    padding: 10px 0 15px;
+                    padding: 0;
                 }
             }
-
-            &__blk {
-                display: none;
-                padding: 0 0 10px;
-                @include rem(13);
-            }
-
-            &__item {
-                // lv1
-                &--lv1 {
-                    &:last-child {
-                        .mobi-menu__link--lv1 {
-                            border-bottom: 0;
-                        }
-                    }
-
-                    &.is-active {
-                        .mobi-menu__link--lv1 {
-                            .btn-toggle-mobi-submenu:before {
-                                content: '\e80f';
-                            }
-                        }
-
-                        .mobi-menu__blk,
-                        .mobi-menu__list--lv2 {}
-                    }
-
-                    &.is-selected {
-                        .mobi-menu__link--lv1 {}
-                    }
-                }
-                // lv2
-                &--lv2 {
-                    &.is-active {
-                        .mobi-menu__link--lv2 {
-                            .btn-toggle-mobi-submenu:before {
-                                content: '\e816';
-                            }
-                        }
-                    }
-                }
-                // lv3
-                &--lv3 {}
-            }
-
             &__link {
-                position: relative;
+                text-decoration:none;
+                color: $white;
                 display: block;
 
-                &:focus,
-                &:hover {
-                    color: $white;
-                }
-                // lv1
                 &--lv1 {
-                    margin-left: 10px;
-                    margin-right: 10px;
-                    padding: 8px 34px 4px 10px;
-                    @include rem(24);
-                    color: $white;
-                    letter-spacing: 1px;
-                    border-bottom: 2px solid #525f8c;
-
-                    .lang-sc &,
-                    .lang-tc & {
-                        @include rem(20);
-                    }
+                    @include rem(40);
+                    text-transform: uppercase;
+                    padding: 20px 0;
                 }
-                // lv2
                 &--lv2 {
-                    padding: 7px 34px 4px 30px;
-                    @include rem(22);
-                    color: $white;
-                    letter-spacing: 1px;
+                    @include rem(32);
+                    text-transform: uppercase;
+                    padding: 12px 0;
+                }
+                &--lv3 {
+                    @include rem(28);
+                    color: #919191;
+                    padding: 7px 0;
+                }
+            }
+        }
+
+        .search {
+            margin: 45px percentage(68/640);
+            background-color: #484747;
+            color: white;
+            padding: 20px 0;
+            @include rem(24);
+            &__box {
+                width: 90%;
+                padding: 18px 35px;
+            }
+
+            .icon-search {
+                font-weight: bold;
+                @include inline_block();
+                vertical-align: middle;
+                @include rem(36);
+            }
+        }
+
+    }
+    .animating .mobi-panel {
+        -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+@media screen and (max-width: $screen-xl-max) {
+
+}
+/* Medium desktop  */
+@media screen and (max-width: $screen-md-max) {
+
+    .menu {
+        &__list {
+            // lv2 col
+            &--lv2-col {
+                padding: 0 30px;
+            }
+        }
+
+        &__item {
+            &:last-child {
+                .menu__list--lv2 {
+                    right: 27px;
+
+                    .ipad & {
+                        right: 28px;
+                    }
 
                     .lang-sc &,
                     .lang-tc & {
-                        @include rem(18);
+                        right: 60px;
+                    }
+
+                    .ipad .lang-sc &,
+                    .ipad .lang-tc & {
+                        right: 59px;
                     }
                 }
-                // lv3
+            }
+        }
+    }
+}
+/* Tablet */
+@media screen and (max-width: $screen-sm-max) {
+    .btn--open-mobi-menu {
+        position: relative;
+        display: block;
+        width: 23px;
+        height: 100%;
+        overflow: hidden;
+        padding: 0;
+        outline: 0!important;
+
+         &:before,
+        &:after,
+        > span {
+            position: absolute;
+            left: 0;
+            z-index: 100;
+            width: 100%;
+            height: 3px;
+            content: '';
+            background: #808080;
+        }
+
+        > span {
+            top: 23px;
+        }
+
+        &:before {
+            top: 14px;
+        }
+
+        &:after {
+            top: 32px;
+        }
+    }
+
+    .mobi-panel {
+        .mobi-menu {
+            &__link {
+
+                &--lv1 {
+                    @include rem(28);
+                }
+                &--lv2 {
+                    @include rem(24);
+                }
                 &--lv3 {
-                    padding: 5px 5px 5px 42px;
-                    @include rem(15);
-                    color: #afb5cb;
-                }
-
-                &--lv4 {
-                    padding: 5px 5px 5px 72px;
-                    @include rem(13);
-                    color: #afb5cb;
-                    position: relative;
-
-                    &:before {
-                        content: '-';
-                        left: 54px;
-                        position: absolute;
-                    }
+                    @include rem(18);
                 }
             }
         }
     }
-    /* Mobile */
-    @media screen and (max-width: $screen-xs-max) {
-        .mobi-menu-trigger {
-            margin-top: 0;
-        }
-
-        .btn--open-mobi-menu {
-            width: 18px;
-
-             &:before,
-            &:after,
-            > span {
-                height: 2px;
-            }
-
-            > span {
-                top: 22px;
-            }
-
-            &:before {
-                top: 15px;
-            }
-
-            &:after {
-                top: 29px;
-            }
-        }
-    }
 }
-
-
-
-.mobi-panel {
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 10001;
-    background-color:#353535;
-    width: 100%;
-    height: 100%;
-    @include accelerate(transform);
-    @include transform(translate3d(100%, 0, 0));
-    @include transition(transform, .35s, $smooth);
-    overflow-y: scroll; /* Momentum scrolling on iOS overflow elements, has to be scroll, not auto */
-    -webkit-overflow-scrolling: touch;
-    
-    .btn--close-mobi-menu {
-       color: $yellow; 
-       background:none;
+/* Mobile */
+@media screen and (max-width: $screen-xs-max) {
+    .mobi-menu-trigger {
+        margin-top: 0;
     }
 
-    .mobi-menu {
-        &__link { 
-            color: $white; text-decoration:none;
-            padding: 40px 0;
+    .btn--open-mobi-menu {
+        width: 18px;
+
+         &:before,
+        &:after,
+        > span {
+            height: 2px;
+        }
+
+        > span {
+            top: 22px;
+        }
+
+        &:before {
+            top: 15px;
+        }
+
+        &:after {
+            top: 29px;
         }
     }
 
-    .has-sub a:after { content: "\e902";}
-
-    > li + > li a{
-        border-bottom:1px solid #666;
+    .mobi-panel {
+        .search__box { width: 80%;}
     }
-
-    .flex { display:block}
-
-    .ie9 & {
-        right: -100%;
-    }
-}
-.animating .mobi-panel {
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
 }
