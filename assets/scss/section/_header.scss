@@ -137,6 +137,10 @@
 }
 /* Medium desktop  */
 @media screen and (max-width: $screen-md-max) {
+	.page-head { padding-bottom:15px; background: #484747;}
+	.navigate { margin-top:23px;}
+	.page-logo {margin-top: 0;}
+
 	.visible-md,
 	.visible-sm,
 	.visible-xs {
@@ -165,7 +169,6 @@
 	}
 
 	.page-logo {
-		margin-top: 15px;
 
 		img {
 			width: 258px;

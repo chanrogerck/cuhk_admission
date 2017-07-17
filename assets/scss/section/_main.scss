@@ -24,6 +24,11 @@ body {
   -ms-overflow-style: scrollbar; /* turns off the auto-hiding behavior in ie10/11 */
 }
 
+.no-scroll body {
+    overflow: hidden;
+    position: relative;
+}
+
 * {
   max-height: 100000px; /* Font Boosting disabled in Android Chrome */
 }
