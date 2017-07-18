@@ -64,7 +64,6 @@ function a(c,d,e,f,g,h,i,j,k,l,o,m,n,o,p) {
           , c = b.parent().next()
           , d = b.parent().parent();
         a.preventDefault(),
-        k.toggleClass('is-active'),
         a.stopPropagation(),
         d.hasClass("is-active") ? (
             d.removeClass("is-active"),
