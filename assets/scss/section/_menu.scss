@@ -392,6 +392,9 @@
 }
 
 @media screen and (max-width: $screen-md-max) and (min-width: $screen-sm-max) {
+
+}
+.tablet {
     .close-mobi-menu-container .mobi-tool { margin-top: 5px}
     .mobi-panel__item {width: 66%; position: absolute;right: 0; height: 100%}
     .js-menu-cover {
@@ -403,7 +406,6 @@
         background: rgba(0, 0, 0, 0.8);
     }
 }
-
 /* Tablet */
 
 @media screen and (max-width: $screen-sm-max) {
