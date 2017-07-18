@@ -43,7 +43,7 @@ body {
 a {
     color: $gray;
     text-decoration: underline;
-    //@include transition(color .3s, background-color .3s);
+    @include transition(color, .3s, $smooth);
     &:focus,
     &:hover {
         color: $yellow;
@@ -464,6 +464,9 @@ p {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-share:before {
+  content: "\e904";
+}
 .icon-chevron-thin-down:before {
   content: "\e902";
 }
@@ -475,7 +478,4 @@ p {
 }
 .icon-close:before {
   content: "\e901";
-}
-.icon-share2:before {
-  content: "\ea82";
 }

@@ -32,7 +32,7 @@
 
     &:hover,
     &:focus {
-		  text-decoration: underline;
+		  color: $darkgray;
     }
   }
 
@@ -54,10 +54,11 @@
   .breadcrumb {
     margin-top: 12px;
     margin-bottom: 10px;
-    display: block;
+    display:block;
     @include rem(14);
     li {
         display: block;
+        text-align:center;
 
         &:before {
             display: none;

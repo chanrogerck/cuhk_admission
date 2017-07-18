@@ -24,9 +24,9 @@
     <div class="wrapper">
         <a class="sr-only sr-only-focusable" id="skip-to-content" href="/#main">Skip to main content</a>
 
-        <div class="parallax-image-wrapper parallax-image-wrapper-100" data-anchor-target="#dragons + .gap" data-bottom-top="transform:translate3d(0px, 200%, 0px)" data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+        <div class="parallax-image-wrapper parallax-image-wrapper-100" data-anchor-target=".header + .inner-poster" data-bottom-top="transform:translate3d(0px, 200%, 0px)" data-top-bottom="transform:translate3d(0px, 0%, 0px)">
 
-            <div class="parallax-image parallax-image-100" style="background-image:url(assets/img/inner.jpg)" data-anchor-target="#dragons + .gap" data-bottom-top="transform: translate3d(0px, -80%, 0px);" data-top-bottom="transform: translate3d(0px, 80%, 0px);"></div>
+            <div class="parallax-image parallax-image-100" style="background-image:url(assets/img/inner.jpg)" data-anchor-target=".header + .inner-poster" data-bottom-top="transform: translate3d(0px, -80%, 0px);" data-top-bottom="transform: translate3d(0px, 80%, 0px);"></div>
             <!--the +/-80% translation can be adjusted to control the speed difference of the image-->
         </div>
 
@@ -46,7 +46,7 @@
                             <a href="#" target="_blank">简</a>
                         </li>
                         <li class="tools__item tools__item--share hidden-md hidden-sm hidden-xs">
-                            <a href="#" target="_blank"><span class="icon-share2"></span></a>
+                            <a href="#" target="_blank"><span class="icon-share"></span></a>
                         </li>
                         <li class="tools__item search-blk hidden-xs">
                             <form class="search" method="get" action="/search">
@@ -128,8 +128,8 @@
             </div>
         </header>
         <div id="skrollr-body">
-            <div class="header" id="dragons"></div>
-            <div class="gap gap-100" style="background-image:url(assets/img/inner.jpg);"></div>
+            <div class="header"></div>
+            <div class="gap inner-poster" style="background-image:url(assets/img/inner.jpg);"></div>
             <div class="content" id="bacons">
 
                 <main class="page-content" tabindex="-1">
@@ -161,10 +161,10 @@
                     </div>
                     <div class="ppl-blk full-width">
                         <div class="container">
-                            <div class="ppl-blk__img">
+                            <div class="ppl-blk__img" data-500="opacity:0;left:-50px" data-1500="opacity:1;left:0">
                                 <img src="assets/img/ppl-img.png" alt="" class="pplImg">
                             </div>
-                            <div class="ppl-blk__txt">
+                            <div class="ppl-blk__txt" data-500="opacity:0;left:50px" data-1500="opacity:1;left:0">
                                 <p class="ppl-blk__txt--quote">The edge given by the platform and the <strong>HARMONIOUS</strong> relationship among students are <strong>VALUABLE</strong> assets to me.</p>
                                 <p class="ppl-blk__txt--source">Song Shiyu, Year 3 in QFRM.</p>
                             </div>
@@ -272,13 +272,6 @@
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/exten.js"></script>
         <script src="assets/js/main.js"></script>
-</body>
-
-</html>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/exten.js"></script>
-<script src="assets/js/main.js"></script>
 </body>
 
 </html>

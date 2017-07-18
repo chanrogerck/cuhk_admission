@@ -1,10 +1,13 @@
 $("html").removeClass("no-js");
 
-function a(c,d,e,f,g,h,j,l,o,m,n,o,p) {
+function a(c,d,e,f,g,h,i,j,l,o,m,n,o,p) {
     b = c.clone(),
     $searchBlk = f.clone(),
     $logo = g.clone(),
-    $lang = h.clone(),
+    $mobiLang = i.clone(),
+    $mobiLangCont = $("<ul class='mobi-tool'></ul>"),
+    $closeBtn = $("<button class='btn btn--close-mobi-menu icon-close js-close-mobi-menu' type='button'></button>"),
+    $rightCont = $("<div class='rightCont'></div>"),
     $mobiSearchBlk = j.clone(),
     d.hover(function() {
         var a = $(this);
@@ -35,8 +38,7 @@ function a(c,d,e,f,g,h,j,l,o,m,n,o,p) {
         $("html").addClass("animating no-scroll"),
         o.addClass("is-open")
     }),
-    m.prepend($mobiSearchBlk),
-    n.on("click", function(a) {
+    $closeBtn.on("click", function(a) {
         a.preventDefault(),
         $("html").removeClass("animating no-scroll"),
         o.removeClass("is-open")
@@ -47,7 +49,9 @@ function a(c,d,e,f,g,h,j,l,o,m,n,o,p) {
           , d = new RegExp("menu__","gi");
         b.attr("class", c.replace(d, "mobi-menu__"))
     }),
-    $('.close-mobi-menu-container').prepend($logo,$("<ul>"+$lang+"</ul>").html()),
+    $mobiLang.each(function(){$(this).appendTo($mobiLangCont);}),
+    $rightCont.prepend($mobiLangCont, $closeBtn),
+    $('.close-mobi-menu-container').prepend($logo,$rightCont),
     $(".mobi-panel li.has-sub > .mobi-menu__link").each(function(a) {
         var b = $(this)
           , c = b.parents("ul");
@@ -73,8 +77,8 @@ $(function () {
     //mobile menu
     var b, c = $(".menu__list--lv1"), d = $(".menu__item--lv1"), e = ($(".menu__link--lv1"),
     $(".menu__list--lv2"),
-    $(".menu")), f = $(".search"), g = $(".page-logo"), h = $(".tools__item--lang"), j = $(".search-blk").clone(), l = $('<nav class="mobi-panel visible-sm-block visible-xs-block visible-md-block"><div class="close-mobi-menu-container"><button class="btn btn--close-mobi-menu icon-close js-close-mobi-menu" type="button">'+ "</button></div></nav>"), m = $('<ul class="tools tools--mobi"></ul>'), n = l.find(".js-close-mobi-menu"), o = $(".js-open-mobi-menu"), p = 300;
-    a(c,d,e,f,g,h,j,l,o,m,n,o,p);
+    $(".menu")), f = $(".search"), g = $(".page-logo"), h = $(".tools__item--lang"), i = $('<ul class="tools-mobi"></ul>'), j = $(".search-blk").clone(), l = $('<nav class="mobi-panel visible-sm-block visible-xs-block visible-md-block"><div class="close-mobi-menu-container clearfix"></div></nav>'), m = "", n = l.find(".js-close-mobi-menu"), o = $(".js-open-mobi-menu"), p = 300;
+    a(c,d,e,f,g,i,h,j,l,o,m,n,o,p);
 
     //parallax
     var s = skrollr.init();
@@ -97,7 +101,7 @@ $(window).on('load resize', function() {
     $('.menu__list.menu__list--lv2').css({
         'width' : windowWidth
         //'top' : headerHeight
-    })
+    });
 });
 
 $(window).on('scroll resize load', function() {
