@@ -1,6 +1,6 @@
 $("html").removeClass("no-js");
 
-function a(c,d,e,f,g,h,i,j,k,l,o,m,n,o,p,q) {
+function a(c,d,e,f,g,h,i,j,k,l,o,m,n,o,p) {
     b = c.clone(),
     $searchBlk = f.clone(),
     $logo = g.clone(),
@@ -32,15 +32,18 @@ function a(c,d,e,f,g,h,i,j,k,l,o,m,n,o,p,q) {
         $(this).find(".search__box").focus()
     }),
     l.append($searchBlk, b, m),
+    $("body").append(l),
     o.on("click", function(a) {
         a.preventDefault(),
         $("html").addClass("animating no-scroll"),
-        o.addClass("is-open")
+        o.addClass("is-open"),
+        k.addClass("is-active")
     }),
-    $closeBtn.on("click", function(a) {
+    $closeBtn.add(k).on("click", function(a) {
         a.preventDefault(),
         $("html").removeClass("animating no-scroll"),
-        o.removeClass("is-open")
+        o.removeClass("is-open"),
+        k.removeClass("is-active")
     }),
     l.find('[class*="menu__"]').each(function(a) {
         var b = $(this)
@@ -48,8 +51,6 @@ function a(c,d,e,f,g,h,i,j,k,l,o,m,n,o,p,q) {
           , d = new RegExp("menu__","gi");
         b.attr("class", c.replace(d, "mobi-menu__"))
     }),
-    q.append(k,l),
-    $("body").append(q),
     $mobiLang.each(function(){$(this).appendTo($mobiLangCont);}),
     $rightCont.prepend($mobiLangCont, $closeBtn),
     $('.close-mobi-menu-container').prepend($logo,$rightCont),
@@ -63,14 +64,18 @@ function a(c,d,e,f,g,h,i,j,k,l,o,m,n,o,p,q) {
           , c = b.parent().next()
           , d = b.parent().parent();
         a.preventDefault(),
+        k.toggleClass('is-active'),
         a.stopPropagation(),
-        d.hasClass("is-active") ? (d.removeClass("is-active"),
-        c.slideUp({
-            duration: p
-        })) : (d.addClass("is-active"),
-        c.slideDown({
-            duration: p
-        }))
+        d.hasClass("is-active") ? (
+            d.removeClass("is-active"),
+            c.slideUp({
+                duration: p
+            })) : (
+                d.addClass("is-active"),
+                c.slideDown({
+                    duration: p
+                })
+            )
     })
 }
 
@@ -78,9 +83,8 @@ $(function () {
     //mobile menu
     var b, c = $(".menu__list--lv1"), d = $(".menu__item--lv1"), e = ($(".menu__link--lv1"),
     $(".menu__list--lv2"),
-    $(".menu")), f = $(".search"), g = $(".page-logo"), h = $(".tools__item--lang"), i = $('<ul class="tools-mobi"></ul>'), j = $(".search-blk").clone(), k = $("<div class='js-menu-cover'></div>"), l = $('<nav class="visible-md-block visible-xs-block visible-sm-block mobi-panel__item"><div class="close-mobi-menu-container clearfix"></div></nav>'), m = "", n = l.find(".js-close-mobi-menu"),
-    o = $(".js-open-mobi-menu"), p = 300, q = $("<div class='mobi-panel'></div>");
-    a(c,d,e,f,g,i,h,j,k,l,o,m,n,o,p,q);
+    $(".menu")), f = $(".search"), g = $(".page-logo"), h = $(".tools__item--lang"), i = $('<ul class="tools-mobi"></ul>'), j = $(".search-blk").clone(), k = $(".js-menu-cover"), l = $('<nav class="mobi-panel visible-sm-block visible-xs-block visible-md-block"><div class="close-mobi-menu-container clearfix"></div></nav>'), m = "", n = l.find(".js-close-mobi-menu"), o = $(".js-open-mobi-menu"), p = 300;
+    a(c,d,e,f,g,i,h,j,k,l,o,m,n,o,p);
 
     //parallax
     if(!$(".mobile"))
