@@ -10178,7 +10178,7 @@ main {
 }
 /* line 233, ../scss/section/_menu.scss */
 .mobi-panel .mobi-menu__list--lv1 {
-  padding: 40px 10.625%;
+  padding: 20px 10.625%;
 }
 /* line 236, ../scss/section/_menu.scss */
 .mobi-panel .mobi-menu__list--lv2 {
@@ -10198,38 +10198,38 @@ main {
 }
 /* line 251, ../scss/section/_menu.scss */
 .mobi-panel .mobi-menu__link--lv1 {
-  font-size: 40px;
-  font-size: 2.5rem;
+  font-size: 32px;
+  font-size: 2rem;
   text-transform: uppercase;
   padding: 20px 0;
 }
 /* line 256, ../scss/section/_menu.scss */
 .mobi-panel .mobi-menu__link--lv2 {
-  font-size: 32px;
-  font-size: 2rem;
+  font-size: 28px;
+  font-size: 1.75rem;
   text-transform: uppercase;
   padding: 12px 0;
 }
 /* line 261, ../scss/section/_menu.scss */
 .mobi-panel .mobi-menu__link--lv3 {
-  font-size: 28px;
-  font-size: 1.75rem;
+  font-size: 26px;
+  font-size: 1.625rem;
   color: #919191;
   padding: 7px 0;
 }
 /* line 269, ../scss/section/_menu.scss */
 .mobi-panel .search {
-  margin: 45px 10.625%;
+  margin: 25px 10.625%;
   background-color: #484747;
   color: white;
   padding: 20px 0;
-  font-size: 24px;
-  font-size: 1.5rem;
+  font-size: 20px;
+  font-size: 1.25rem;
 }
 /* line 275, ../scss/section/_menu.scss */
 .mobi-panel .search__box {
   width: 90%;
-  padding: 18px 35px;
+  padding: 9px 17px;
 }
 /* line 280, ../scss/section/_menu.scss */
 .mobi-panel .search .icon-search {
@@ -10239,8 +10239,8 @@ main {
   *display: inline;
   *zoom: 1;
   vertical-align: middle;
-  font-size: 36px;
-  font-size: 2.25rem;
+  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 /* line 289, ../scss/section/_menu.scss */
@@ -10270,8 +10270,8 @@ main {
 }
 /* line 303, ../scss/section/_menu.scss */
 .close-mobi-menu-container .mobi-tool li:first-child:after {
-  font-size: 28px;
-  font-size: 1.75rem;
+  font-size: 20px;
+  font-size: 1.25rem;
   content: "|";
   color: #ffffff;
   padding: 0 15px 0 10px;
@@ -10279,8 +10279,8 @@ main {
 /* line 311, ../scss/section/_menu.scss */
 .close-mobi-menu-container .mobi-tool a {
   color: #ffffff;
-  font-size: 28px;
-  font-size: 1.75rem;
+  font-size: 20px;
+  font-size: 1.25rem;
   text-decoration: none;
 }
 /* line 316, ../scss/section/_menu.scss */

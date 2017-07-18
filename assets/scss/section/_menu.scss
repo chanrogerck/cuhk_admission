@@ -231,7 +231,7 @@
         }
         &__list {
             &--lv1 {
-                padding: 40px percentage(68/640);
+                padding: 20px percentage(68/640);
             }
             &--lv2 {
                 display: none;
@@ -249,17 +249,17 @@
             display: block;
 
             &--lv1 {
-                @include rem(40);
+                @include rem(32);
                 text-transform: uppercase;
                 padding: 20px 0;
             }
             &--lv2 {
-                @include rem(32);
+                @include rem(28);
                 text-transform: uppercase;
                 padding: 12px 0;
             }
             &--lv3 {
-                @include rem(28);
+                @include rem(26);
                 color: #919191;
                 padding: 7px 0;
             }
@@ -267,21 +267,21 @@
     }
 
     .search {
-        margin: 45px percentage(68/640);
+        margin: 25px percentage(68/640);
         background-color: #484747;
         color: white;
         padding: 20px 0;
-        @include rem(24);
+        @include rem(20);
         &__box {
             width: 90%;
-            padding: 18px 35px;
+            padding: 9px 17px;
         }
 
         .icon-search {
             font-weight: bold;
             @include inline_block();
             vertical-align: middle;
-            @include rem(36);
+            @include rem(20);
         }
     }
 }
@@ -301,7 +301,7 @@
                 padding-left:0;
 
                 &:after {
-                    @include rem(28);
+                    @include rem(20);
                     content: "|";
                     color:$white;
                     padding: 0 15px 0 10px;
@@ -310,7 +310,7 @@
         }
         a {
             color:$white;
-            @include rem(28);
+            @include rem(20);
             text-decoration: none;
 
             &:hover, &:focus {
