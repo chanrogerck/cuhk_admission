@@ -402,7 +402,7 @@
     }
 }
 
-@media screen and (max-width: $screen-md-max) and (min-width: $screen-sm-max) {
+@media screen and (max-width: $screen-md-max) and (min-width: $screen-xs-max) {
     .close-mobi-menu-container .mobi-tool { margin-top: 5px}
     .mobi-panel {width: 66%;}
 
