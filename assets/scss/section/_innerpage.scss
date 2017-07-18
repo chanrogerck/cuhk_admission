@@ -1,6 +1,5 @@
 /* General
 =======================================*/
-
 main {
     background-color: $white;
 
@@ -8,42 +7,41 @@ main {
         padding: 0 percentage(115/1440);
 
         &:last-child {
-          padding-bottom:125px;
+            padding-bottom: 125px;
         }
     }
 }
 
 .page-title {
-  margin-bottom: 20px;
-  padding: 0;
-  color: $purple;
-	@include rem(36);
-  border-bottom: 0;
-  background: none;
-  text-align: center;
+    margin-bottom: 20px;
+    padding: 0;
+    color: $purple;
+    @include rem(36);
+    border-bottom: 0;
+    background: none;
+    text-align: center;
 
-  .lang-tc &,
-  .lang-sc & {
-    @include rem(38);
-  }
+    .lang-sc &,
+    .lang-tc & {
+        @include rem(38);
+    }
 }
 
 .inner-poster {
     overflow: hidden;
-    background: url(../img/inner.jpg) center center no-repeat;
-    height: 560px;  
+    background: url("../img/inner.jpg") center center no-repeat;
+    height: 560px;
 }
 
 .inner-content {
-  position: relative;
+    position: relative;
 }
 
-
 .full-width {
-  > .ckec {
-    margin-bottom: 127px;
-    padding: percentage(60/1540) percentage(100/1540);
-  }
+    > .ckec {
+        margin-bottom: 127px;
+        padding: percentage(60/1540) percentage(100/1540);
+    }
 }
 
 .page-info {
@@ -70,67 +68,76 @@ main {
 }
 
 .ppl-blk {
-    background: url(../img/ppl-blk-bg.jpg) center bottom no-repeat ;
-    margin-bottom:65px;
+    background: url("../img/ppl-blk-bg.jpg") center bottom no-repeat;
+    margin-bottom: 65px;
 
     > .container {
         padding: 0 percentage(115/1440);
-        min-height:410px;
+        min-height: 410px;
         @include flexbox();
     }
 
     &__img {
-      width:496px;
-      position:relative;
-      -ms-top:15px;
-      .pplImg { position: absolute; bottom:0;}
+        width: 496px;
+        position: relative;
+        -ms-top: 15px;
+
+        .pplImg {
+            position: absolute;
+            bottom: 0;
+        }
     }
 
     &__txt {
-      width: percentage(730/1440);
-      color:$white;
-      padding:44px 59px 0;
-      position:relative;
+        width: percentage(730/1440);
+        color: $white;
+        padding: 44px 59px 0;
+        position: relative;
 
-      &:before, &:after {
-        position: absolute;
-        height: 46px;
-        width: 70px;
-        content:" ";
-        display:block;
-      }
+        &:after,
+        &:before {
+            position: absolute;
+            height: 46px;
+            width: 70px;
+            content: " ";
+            display: block;
+        }
 
-      &:before {
-        top: 46px;
-        left: -53px;
-        background:url(../img/quote-open.png) center center no-repeat;
-      }
+        &:before {
+            top: 46px;
+            left: -53px;
+            background: url("../img/quote-open.png") center center no-repeat;
+        }
 
-      &:after {
-        bottom: 46px;
-        right: 0;
-        background:url(../img/quote-close.png) center center no-repeat;
-      }
+        &:after {
+            bottom: 46px;
+            right: 0;
+            background: url("../img/quote-close.png") center center no-repeat;
+        }
 
-      &--quote {
-        @include rem(32);
-        line-height:1.3;
-        margin-bottom:10px;
-        margin-top: 22px;
-      }
-      &--source {
-        @include fontHE();
-        @include rem(22);
-        color:#f0cbf0;
-      }
+        &--quote {
+            @include rem(32);
+            line-height: 1.3;
+            margin-bottom: 10px;
+            margin-top: 22px;
+        }
+
+        &--source {
+            @include fontHE();
+            @include rem(22);
+            color: #f0cbf0;
+        }
     }
-
 }
 
 .relatlist {
-
     margin-bottom: 36px;
-    ul { list-style: none; padding: 0; margin: 0;}
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
 
     &.list-blue {
         color: #348ea2;
@@ -140,7 +147,7 @@ main {
     &__title {
         @include rem(22);
         border-bottom: 1px solid;
-        padding:0 0 15px;
+        padding: 0 0 15px;
         margin: 0 0 25px;
     }
 
@@ -155,8 +162,9 @@ main {
             @include inline_block();
             margin-left: 20px;
 
-            &:hover, &:focus {
-              color : $lightgray;
+            &:focus,
+            &:hover {
+                color: $lightgray;
             }
         }
 
@@ -176,27 +184,33 @@ main {
     margin-bottom: 55px;
 
     .course-detail {
-
         &__list {
             margin-bottom: 65px;
             @include flexbox;
         }
 
-        &__item{
+        &__item {
             position: relative;
             @include rem(24);
             padding: 0 percentage(20/1112);
             flex: 1;
             border-left: 1px solid gray;
 
-            .title {color: $purple;}
-            p {color: #202020; margin-bottom: 5px; line-height: 1.2;}
+            .title {
+                color: $purple;
+            }
 
+            p {
+                color: #202020;
+                margin-bottom: 5px;
+                line-height: 1.2;
+            }
 
             &:first-child {
                 padding-left: 0;
                 border-left: 0;
             }
+
             &:last-child {
                 text-align: right;
                 padding-right: 0;
@@ -216,16 +230,19 @@ main {
             @include rem(20);
             margin-right: 60px;
 
-            a {text-decoration: none; line-height: 1.6}
+            a {
+                text-decoration: none;
+                line-height: 1.6;
+            }
 
-            &:after{
+            &:after {
                 width: 24px;
                 height: 24px;
                 margin-left: 15px;
                 display: inline-block;
                 content: "";
                 vertical-align: middle;
-                background:url(data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVBAMAAABbObilAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAALVBMVEX///+DO4SDO4SDO4SDO4SDO4SDO4SDO4SDO4SDO4SDO4SDO4SDO4SDO4QAAAAxKXLAAAAADXRSTlMAEFCAQK+P75/PYCDf/R/qrAAAAAFiS0dEDm+9ME8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfhBxEAKguz8JvNAAAAfklEQVQI12NgYGBgVDZWZIAAlti7d++GQNi5FQ4MHrUJICbHVQEgKXoDLNzAYASkeoESLFcZGOYuYGBgvQLEhQwMkreAhpUyMMg2AGmQRK8Ag64DA0TCV4HBFqQfJMFrAGEz7D0AZ0PFkdUjm4NsPrK9yO5BcSey+1H8BfcvAF/PK3YcuOxQAAAAAElFTkSuQmCC) no-repeat right top;
+                background: url("data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVBAMAAABbObilAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAALVBMVEX///+DO4SDO4SDO4SDO4SDO4SDO4SDO4SDO4SDO4SDO4SDO4SDO4SDO4QAAAAxKXLAAAAADXRSTlMAEFCAQK+P75/PYCDf/R/qrAAAAAFiS0dEDm+9ME8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfhBxEAKguz8JvNAAAAfklEQVQI12NgYGBgVDZWZIAAlti7d++GQNi5FQ4MHrUJICbHVQEgKXoDLNzAYASkeoESLFcZGOYuYGBgvQLEhQwMkreAhpUyMMg2AGmQRK8Ag64DA0TCV4HBFqQfJMFrAGEz7D0AZ0PFkdUjm4NsPrK9yO5BcSey+1H8BfcvAF/PK3YcuOxQAAAAAElFTkSuQmCC") no-repeat right top;
             }
         }
     }
@@ -250,79 +267,76 @@ main {
         .course-detail__item {
             border-left-color: #833b84;
         }
+
         .btn--apply {
             background-color: #833b84;
             @include transition(background-color, .25s, $smooth);
 
-            &:hover, &:focus {
-              background-color: #c65cc7;
+            &:focus,
+            &:hover {
+                background-color: #c65cc7;
             }
         }
 
         .course-list {
             a {
-              color: #833b84;
+                color: #833b84;
 
-              &:hover, &:focus {
-                color: #c65cc7;
-              }
+                &:focus,
+                &:hover {
+                    color: #c65cc7;
+                }
             }
         }
-
     }
-
 }
-
 /* Sitemap
 =======================================*/
 .sitemap {
-  @extend .clearfix;
+    @extend .clearfix;
 
-  ul {
-    margin-bottom: 35px;
-  }
-
-  .ul {
-    &_lv2 {
-      margin-top: 8px;
-      margin-bottom: 12px;
+    ul {
+        margin-bottom: 35px;
     }
 
-    &_lv3 {
-      margin-top: 8px;
-      margin-bottom: 12px;
+    .ul {
+        &_lv2 {
+            margin-top: 8px;
+            margin-bottom: 12px;
+        }
+
+        &_lv3 {
+            margin-top: 8px;
+            margin-bottom: 12px;
+        }
     }
-  }
 
-  li {
-    margin-bottom: 10px;
-  }
-
-  a {
-    text-decoration: none;
-
-    &:hover,
-    &:focus {
-      text-decoration: underline;
+    li {
+        margin-bottom: 10px;
     }
-  }
 
-  &__left {
-    float: left;
-    width: 45%;
-  }
+    a {
+        text-decoration: none;
 
-  &__right {
-    float: right;
-    width: 45%;
-  }
+        &:focus,
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__left {
+        float: left;
+        width: 45%;
+    }
+
+    &__right {
+        float: right;
+        width: 45%;
+    }
 }
-
 @media screen and (max-width: $screen-md-max) {
     .course-detail {
-
         .course-detail {
-
             &__list {
                 display: block;
             }
@@ -338,11 +352,13 @@ main {
                     display: none;
                 }
 
-                &:last-child{
+                &:last-child {
                     text-align: left;
                 }
 
-                p { display: inline-block;}
+                p {
+                    display: inline-block;
+                }
             }
         }
 
@@ -355,127 +371,122 @@ main {
 
     .ppl-blk {
         min-height: 408px;
-        background-image: url(../img/student-says.jpg);
-        .container { display: none;}
+        background-image: url("../img/student-says.jpg");
+
+        .container {
+            display: none;
+        }
     }
 }
-
-
 /* X large desktop  */
-@media screen and (min-width: $screen-xl-min) {
-
-}
-
-
+@media screen and (min-width: $screen-xl-min) {}
 /* large desktop  */
 @media screen and (max-width: $screen-xl-max) {
-  /* General
+    /* General
   =======================================*/
-  .page-banner {
-    &:before {
-      right: calc(100% - 150px);
+    .page-banner {
+        &:before {
+            right: calc(100% - 150px);
+        }
     }
-  }
 
-  .side-content {
-    padding: 3.5% 5%;
-    @include background-size(400px auto);
-  }
-
-  /* Education
+    .side-content {
+        padding: 3.5% 5%;
+        @include background-size(400px auto);
+    }
+    /* Education
   =======================================*/
-  .rte-img--edu .rte-img__content-wrap {
-    min-height: 220px;
-  }
+    .rte-img--edu .rte-img__content-wrap {
+        min-height: 220px;
+    }
 }
-
-
 /* Medium desktop  */
 @media screen and (max-width: $screen-md-max) {
-  /* General
+    /* General
   =======================================*/
-  .inner-poster { height:450px; }
+    .inner-poster {
+        height: 450px;
+    }
 }
-
-
 /* Tablet */
 @media screen and (max-width: $screen-sm-max) {
-  /* General
+    /* General
   =======================================*/
-  .inner-poster { height:300px; }
-
-  .page-title {
-  	@include rem(31);
-
-    .lang-tc &,
-    .lang-sc & {
-      @include rem(28);
-    }
-  }
-
-  .page-banner {
-    &:before {
-      right: calc(100% - 260px);
+    .inner-poster {
+        height: 300px;
     }
 
-    &__img {
-      height: 83%;
+    main {
+        &:last-child {
+            padding-bottom: 0;
+        }
     }
-  }
 
+    .page-title {
+        @include rem(31);
 
-  .full-width {
-    > .ckec {
-      margin-bottom: 60px;
-      padding: 2.8% 2.8% 25px;
+        .lang-sc &,
+        .lang-tc & {
+            @include rem(28);
+        }
     }
-  }
-  .course-detail {
 
-      .course-detail {
-          &__item {
-              width: 100%;
-          }
-      }
-  }
+    .page-banner {
+        &:before {
+            right: calc(100% - 260px);
+        }
 
+        &__img {
+            height: 83%;
+        }
+    }
+
+    .full-width {
+        > .ckec {
+            margin-bottom: 60px;
+            padding: 2.8% 2.8% 25px;
+        }
+    }
+
+    .course-detail {
+        .course-detail {
+            &__item {
+                width: 100%;
+            }
+        }
+    }
 }
-
-
 /* Mobile */
 @media screen and (max-width: $screen-xs-max) {
-  /* General
+    /* General
   =======================================*/
+    .page-title {
+        margin-bottom: 16px;
+        @include rem(28);
 
-  .page-title {
-    margin-bottom: 16px;
-  	@include rem(28);
-
-    .lang-tc &,
-    .lang-sc & {
-       @include rem(24);
+        .lang-sc &,
+        .lang-tc & {
+            @include rem(24);
+        }
     }
-  }
 
-  .page-banner {
-    display: none;
-  }
+    .page-banner {
+        display: none;
+    }
 
-  .inner-content {
-    margin-top: 0;
-  }
-
-  /* Sitemap
+    .inner-content {
+        margin-top: 0;
+    }
+    /* Sitemap
   =======================================*/
-  .sitemap {
-    &__left,
-    &__right {
-      float: none;
-      width: auto;
+    .sitemap {
+        &__left,
+        &__right {
+            float: none;
+            width: auto;
+        }
     }
-  }
 }
-
 // .collapse {
 //   display: block;
 // }

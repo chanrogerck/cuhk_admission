@@ -1,6 +1,6 @@
 $("html").removeClass("no-js");
 
-function a(c,d,e,f,g,h,i,j,l,o,m,n,o,p) {
+function a(c,d,e,f,g,h,i,j,k,l,o,m,n,o,p,q) {
     b = c.clone(),
     $searchBlk = f.clone(),
     $logo = g.clone(),
@@ -32,7 +32,6 @@ function a(c,d,e,f,g,h,i,j,l,o,m,n,o,p) {
         $(this).find(".search__box").focus()
     }),
     l.append($searchBlk, b, m),
-    $("body").append(l),
     o.on("click", function(a) {
         a.preventDefault(),
         $("html").addClass("animating no-scroll"),
@@ -49,6 +48,8 @@ function a(c,d,e,f,g,h,i,j,l,o,m,n,o,p) {
           , d = new RegExp("menu__","gi");
         b.attr("class", c.replace(d, "mobi-menu__"))
     }),
+    q.append(k,l),
+    $("body").append(q),
     $mobiLang.each(function(){$(this).appendTo($mobiLangCont);}),
     $rightCont.prepend($mobiLangCont, $closeBtn),
     $('.close-mobi-menu-container').prepend($logo,$rightCont),
@@ -77,11 +78,12 @@ $(function () {
     //mobile menu
     var b, c = $(".menu__list--lv1"), d = $(".menu__item--lv1"), e = ($(".menu__link--lv1"),
     $(".menu__list--lv2"),
-    $(".menu")), f = $(".search"), g = $(".page-logo"), h = $(".tools__item--lang"), i = $('<ul class="tools-mobi"></ul>'), j = $(".search-blk").clone(), l = $('<nav class="mobi-panel visible-sm-block visible-xs-block visible-md-block"><div class="close-mobi-menu-container clearfix"></div></nav>'), m = "", n = l.find(".js-close-mobi-menu"), o = $(".js-open-mobi-menu"), p = 300;
-    a(c,d,e,f,g,i,h,j,l,o,m,n,o,p);
+    $(".menu")), f = $(".search"), g = $(".page-logo"), h = $(".tools__item--lang"), i = $('<ul class="tools-mobi"></ul>'), j = $(".search-blk").clone(), k = $("<div class='js-menu-cover'></div>"), l = $('<nav class="visible-md-block visible-xs-block visible-sm-block mobi-panel__item"><div class="close-mobi-menu-container clearfix"></div></nav>'), m = "", n = l.find(".js-close-mobi-menu"),
+    o = $(".js-open-mobi-menu"), p = 300, q = $("<div class='mobi-panel'></div>");
+    a(c,d,e,f,g,i,h,j,k,l,o,m,n,o,p,q);
 
     //parallax
-    if(!$("'mobile'"))
+    if(!$(".mobile"))
         var s = skrollr.init();
 });
 
