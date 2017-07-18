@@ -63,7 +63,7 @@
             width: 100%;
             min-height: 180px;
             padding: 35px percentage(90/1440);
-            @include transform(translate3d(0, 200px, 0));
+            @include transform(translate3d(0, -90px, 0));
             @include box-shadow(1px 3px 6px 0px rgba(0, 0, 0, .15));
             @include transition(all, .38s, $smooth);
             will-change: transform;

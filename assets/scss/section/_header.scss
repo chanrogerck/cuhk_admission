@@ -141,7 +141,7 @@
 }
 /* Medium desktop  */
 @media screen and (max-width: $screen-md-max) {
-	.page-head { padding-bottom:15px; background: #484747;}
+	.page-head { padding-bottom:15px;}
 	.navigate { margin-top:6px;}
 	.page-logo {margin-top: 0;
 		img { height: 35px;}
@@ -177,6 +177,8 @@
 	.head-top {
 		height: 46px;
 	}
+
+	.page-head { background: #484747;}
 
 	.page-logo {
 		img { height: 30px;}
