@@ -98,9 +98,11 @@ $('nav .has-sub').on("mouseover focus", function(){
     $(this).removeClass("is-active");
 });
 
-$('.icon-search').on("click focus", function() {
-    $(this).parent().find(".search__box").focus()
-})
+$('.tools__item .icon-search').on("click focus", function() {
+    $(this).parent().find(".search__box").focus().addClass("is-open");
+}).on("blur", function() {
+    $(this).parent().find(".search__box").blur().removeClass("is-open");
+});
 
 $(window).on('load resize', function() {
     var windowWidth = $(window).width();

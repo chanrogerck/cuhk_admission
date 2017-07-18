@@ -9799,7 +9799,7 @@ main {
   color: #ffffff;
 }
 /* line 109, ../scss/section/_header.scss */
-.search__box:focus {
+.search__box:focus, .search__box.is-open {
   width: 180px;
   margin-right: 5px;
   cursor: default;

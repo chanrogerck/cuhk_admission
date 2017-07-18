@@ -106,7 +106,7 @@
 			color: $white;
 		}
 
-		&:focus {
+		&:focus, &.is-open {
 			width: 180px;
 			margin-right: 5px;
 			cursor: default;
