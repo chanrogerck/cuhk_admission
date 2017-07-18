@@ -81,7 +81,8 @@ $(function () {
     a(c,d,e,f,g,i,h,j,l,o,m,n,o,p);
 
     //parallax
-    var s = skrollr.init();
+    if(!$("'mobile'"))
+        var s = skrollr.init();
 });
 
 
