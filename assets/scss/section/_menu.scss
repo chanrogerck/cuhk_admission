@@ -25,7 +25,7 @@
         height: 4px;
         border-radius: 4px;
     }
-    @media (min-width: $grid-float-breakpoint) {
+    @media (min-width: $grid-float-breakpoint) { 
         display: block;
     }
 }
@@ -274,18 +274,18 @@
         margin: 20px percentage(68/640);
         background-color: #484747;
         color: white;
-        padding: 15px 0;
+        padding: 15px;
         &__box {
-            width: 90%;
-            padding: 0px 17px;
+            width: 80%;
+            padding-right: 17px;
             @include rem(24);
-            height: auto;
+            height: auto; 
         }
 
         .icon-search {
             font-weight: bold;
-            @include inline_block();
-            vertical-align: middle;
+            float:right;
+            margin-top: 3px;
             @include rem(28);
         }
     }
@@ -402,12 +402,12 @@
     }
 }
 
+/* Tablet */
 @media screen and (max-width: $screen-md-max) and (min-width: $screen-xs-max) {
     .close-mobi-menu-container .mobi-tool { margin-top: 5px}
     .mobi-panel {width: 66%;}
-
+    
 }
-/* Tablet */
 
 @media screen and (max-width: $screen-sm-max) {
     .btn--open-mobi-menu {

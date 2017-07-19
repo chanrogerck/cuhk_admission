@@ -106,7 +106,7 @@
 			color: $white;
 		}
 
-		&:focus, &.is-open {
+		&:focus{
 			width: 180px;
 			margin-right: 5px;
 			cursor: default;
@@ -155,10 +155,12 @@
 		*display: inline;
 		*zoom: 1;
 	}
-
-	.search__box:focus {
-		width: 130px;
-		outline:0;
+	
+	.tools__item {
+		&.search__box:focus{
+			width: 130px;
+			outline:0;
+		}
 	}
 
 	.head-btm {
