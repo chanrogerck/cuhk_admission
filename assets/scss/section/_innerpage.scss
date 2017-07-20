@@ -406,6 +406,13 @@ main {
     .inner-poster {
         height: 450px;
     }
+
+    .relatlist {
+        
+        &__title { @include rem(20);}
+        &__item { @include rem(18);}
+
+    }
 }
 /* Tablet */
 @media screen and (max-width: $screen-sm-max) {

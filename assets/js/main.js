@@ -5,8 +5,8 @@ function a(c,d,e,f,g,h,i,j,k,l,o,m,n,o,p) {
     $searchBlk = f.clone(),
     $logo = g.clone(),
     $mobiLang = i.clone(),
-    $mobiLangCont = $("<ul class='mobi-tool'></ul>"),
-    $closeBtn = $("<button class='btn btn--close-mobi-menu icon-close js-close-mobi-menu' type='button'></button>"),
+    $mobiLangCont = $("<ul class='tools'></ul>"),
+    $closeBtn = $("<li class='visible-lg-inline-block visible-md-inline-block visible-sm-inline-block visible-xs-inline-block'><button class='btn btn--close-mobi-menu icon-close js-close-mobi-menu' type='button'></button></li>"),
     $rightCont = $("<div class='rightCont'></div>"),
     $mobiSearchBlk = j.clone(),
     d.hover(function() {
@@ -52,7 +52,7 @@ function a(c,d,e,f,g,h,i,j,k,l,o,m,n,o,p) {
         b.attr("class", c.replace(d, "mobi-menu__"))
     }),
     $mobiLang.each(function(){$(this).appendTo($mobiLangCont);}),
-    $rightCont.prepend($mobiLangCont, $closeBtn),
+    $rightCont.prepend($mobiLangCont.append($closeBtn)),
     $('.close-mobi-menu-container').prepend($logo,$rightCont),
     $(".mobi-panel li.has-sub > .mobi-menu__link").each(function(a) {
         var b = $(this)

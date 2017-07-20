@@ -30,11 +30,18 @@
 	@include rem(18);
 	text-align: right;
 
-	.tools {margin-bottom: 0; padding: 0 20px 0 0;}
+	.navbar-toggle {
+		float: none;
+		padding: 0;
+		margin: 0;
+	}
+}
 
-	.tools__item {
-		display: inline-block;
+.tools {margin-bottom: 0; padding: 0 0 0 20px;
+	&__item { 
+		@include inline_block();
 		padding: 0 6px;
+		vertical-align: top;
 
 		a { color: white;}
 
@@ -58,13 +65,8 @@
 			padding-right: 0;
 		}
 	}
-
-	.navbar-toggle {
-		float: none;
-		padding: 0;
-		margin: 0;
-	}
 }
+
 
 .hku-home {
 	.lang-sc &,
@@ -143,9 +145,8 @@
 @media screen and (max-width: $screen-md-max) {
 	.page-head { padding-bottom:15px;}
 	.navigate { margin-top:6px;}
-	.page-logo {margin-top: 0;
-		img { height: 35px;}
-	}
+	.tools { padding-right:0;}
+	.page-logo {margin-top: 0;}
 
 	.visible-md,
 	.visible-sm,
@@ -162,17 +163,23 @@
 			outline:0;
 		}
 	}
-
+ 
 	.head-btm {
 		height: 48px;
 	}
 }
+
+@media screen and (max-width: $screen-md-max) and (min-width: $screen-xs-max) {
+	.page-logo {
+		img { height: 35px;}
+	}
+}
+
 /* Tablet */
 @media screen and (max-width: $screen-sm-max) {
 	.page-head {
 		@include box-shadow(0px 2px 5px 0px rgba(50, 50, 50, 0.15));
 	}
-
 }
 /* Mobile */
 @media screen and (max-width: $screen-xs-max) {
@@ -185,9 +192,8 @@
 	.mobi-menu-trigger { margin-top: 1px;}
 
 	.page-logo {
-		img { height: 30px;}
-		&--main {
-			@include rem(15);
-		}
+		width: percentage(353/640);
+		img { max-width: 100%;
+    max-height: 35px;}
 	}
 }

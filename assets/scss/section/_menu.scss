@@ -203,7 +203,10 @@
         color: $yellow;
     }
 
-    .rightCont { float:right;}
+    .rightCont { float:right; @include rem(18); 
+
+        a {text-decoration: none;}
+    }
 
     .mobi-menu {
         &__item {
@@ -278,25 +281,25 @@
         &__box {
             width: 80%;
             padding-right: 17px;
-            @include rem(24);
+            @include rem(18);
             height: auto; 
         }
 
         .icon-search {
             font-weight: bold;
             float:right;
-            margin-top: 3px;
-            @include rem(25);
+            margin-top: 1px;
+            @include rem(21);
         }
     }
 }
 
 .close-mobi-menu-container {
-    padding: 25px percentage(25/640);
+    padding: 15px percentage(25/640);
     background-color: #484747;
 
     .mobi-tool {
-        margin-right:30px;
+        margin-right:15px;
         padding-left:0;
         margin-bottom: 0;
         @include inline-block();
@@ -341,7 +344,8 @@
     background: none;
     @include rem(35);
     vertical-align:top;
-    margin-top: -3px;
+    border:0;
+    line-height: 28px;
 
     &:hover { color:$yellow;}
 }
