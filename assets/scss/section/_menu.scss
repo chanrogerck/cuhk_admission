@@ -274,7 +274,7 @@
         margin: 20px percentage(68/640);
         background-color: #484747;
         color: white;
-        padding: 15px;
+        padding: 5px 15px;
         &__box {
             width: 80%;
             padding-right: 17px;
@@ -286,7 +286,7 @@
             font-weight: bold;
             float:right;
             margin-top: 3px;
-            @include rem(28);
+            @include rem(25);
         }
     }
 }
@@ -297,6 +297,7 @@
 
     .mobi-tool {
         margin-right:30px;
+        padding-left:0;
         margin-bottom: 0;
         @include inline-block();
         list-style: none;
@@ -310,7 +311,7 @@
                     @include rem(20);
                     content: "|";
                     color:$white;
-                    padding: 0 15px 0 10px;
+                    padding: 0 12px 0 7px;
                 }
             }
         }

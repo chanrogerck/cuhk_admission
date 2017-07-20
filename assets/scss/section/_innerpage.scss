@@ -5,9 +5,9 @@ main {
 
     > .container {
         padding: 0 percentage(115/1440);
-
+        
         &:last-child {
-            padding-bottom: 125px;
+            padding-bottom: percentage(125/1440);
         }
     }
 }
@@ -75,6 +75,13 @@ main {
         padding: 0 percentage(115/1440);
         min-height: 410px;
         @include flexbox();
+
+        &-img {
+            min-height:auto;
+            padding:0;
+
+            img { width: 100%;}
+        }
     }
 
     &__img {
@@ -347,6 +354,7 @@ main {
                 width: 49%;
                 padding: 0;
                 margin: 0 0 10px;
+                @include rem(16);
 
                 &:before {
                     display: none;
@@ -354,10 +362,6 @@ main {
 
                 &:last-child {
                     text-align: left;
-                }
-
-                p {
-                    display: inline-block;
                 }
             }
         }
@@ -367,14 +371,9 @@ main {
                 display: block;
             }
         }
-    }
 
-    .ppl-blk {
-        min-height: 408px;
-        background-image: url("../img/student-says.jpg");
-
-        .container {
-            display: none;
+        .btn--apply {
+            @include rem(16);
         }
     }
 }
