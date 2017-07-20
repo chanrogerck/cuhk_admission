@@ -61,9 +61,14 @@
     &:focus {
       color: #f0d100;
     }
-  }
+  } 
 
-  .foot-logo { float: left}
+  .foot-logo-vert { display:none; width:100%;}
+  .foot-logo-hori { display:block; width:100%;}
+
+  .foot-logo { 
+    float: left; width:297px;
+  }
 
   p { text-align: right; margin-bottom: 0; }
 
@@ -143,7 +148,6 @@
   }
 }
 
-
 /* Medium desktop  */
 @media screen and (max-width: $screen-md-max) and (min-width: $screen-sm-max) {
 
@@ -162,6 +166,10 @@
     }
 }
 
+@media screen and (max-width: $screen-md-max) {
+
+    
+}
 
 /* Tablet */
 @media screen and (max-width: $screen-sm-max) {
@@ -183,6 +191,11 @@
           float: none;
           text-align: center;
         }
+    }
+    .page-foot {
+      .foot-logo {text-align:center;}
+      .foot-logo-vert { @include inline-block(); width:percentage(297/640); max-width:297px;}
+      .foot-logo-hori { display:none;}
     }
 
 	.btn-top-box {
